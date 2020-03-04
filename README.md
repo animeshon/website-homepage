@@ -4,7 +4,7 @@ This is a first version of the homepage. It includes all the designed elements s
 
 ## How to run the project
 
-Make sure to have <strong>node</strong> and <strong>npm<strong> installed on your local machine to run it locally (development version).
+Make sure to have <strong>Node</strong> and <strong>Npm</strong> installed on your local machine to run it locally (development version).
 
 Then from CLI:
 
