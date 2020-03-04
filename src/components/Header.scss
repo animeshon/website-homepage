@@ -1,0 +1,51 @@
+.header {
+    display: flex;
+    width: 100%;
+    min-height: 100vh;
+    background-image: url('../assets/hero-image.jpg');
+    background-size: cover;
+    background-position: bottom center;
+    flex-direction: column;
+    padding: 60px;
+    align-items: center;
+    @media screen and (max-width: 768px) {
+        padding: 60px 0;
+    }
+    h1 {
+        max-width: 1280px;
+        width: 94%;
+        text-align: center;
+        align-self: center;
+        img {
+            width: 100%;
+        }
+    }
+    .brand {
+        width: 220px;
+        height: auto;
+    }
+}
+
+.subscription-box {
+    flex: 1;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    h2 {
+        font-size: 30px;
+        font-weight: 600;
+        color: #f0c808;
+        margin: 35px 0;
+        @media screen and (max-width: 768px) {
+            font-size: 24px;
+        }
+    }
+    p {
+        color: #fff;
+        font-weight: lighter;
+        margin-top: 14px;
+        font-size: 14px;
+        line-height: 2;
+    }
+}

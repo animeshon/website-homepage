@@ -1,0 +1,38 @@
+{
+    "name": "animeshon_homepage",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "format": "prettier \"src/**/*.{js,html}\" --write",
+        "lint": "eslint \"src/**/*.{js,jsx}\" --quiet",
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "dev": "parcel src/index.html",
+        "prod": "parcel build src/index.html"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+        "react": "^16.13.0",
+        "react-dom": "^16.13.0",
+        "react-router": "^5.1.2"
+    },
+    "devDependencies": {
+        "@babel/core": "^7.8.6",
+        "@babel/plugin-proposal-class-properties": "^7.8.3",
+        "@babel/preset-env": "^7.8.6",
+        "@babel/preset-react": "^7.8.3",
+        "babel-eslint": "^10.1.0",
+        "cross-env": "^7.0.0",
+        "eslint": "^6.8.0",
+        "eslint-config-prettier": "^6.10.0",
+        "eslint-plugin-import": "^2.20.1",
+        "eslint-plugin-jsx-a11y": "^6.2.3",
+        "eslint-plugin-react": "^7.18.3",
+        "eslint-plugin-react-hooks": "^2.5.0",
+        "parcel-bundler": "^1.12.4",
+        "prettier": "^1.19.1",
+        "sass": "^1.26.2"
+    }
+}

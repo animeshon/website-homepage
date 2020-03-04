@@ -1,0 +1,54 @@
+.devices-feature .support {
+    @media screen and (max-width: 768px) {
+        flex-direction: column;
+    }
+    > div {
+        width: 33.333%;
+        min-height: 30px;
+        flex-direction: column;
+        display: flex;
+        align-self: flex-end;
+        text-align: center;
+        @media screen and (max-width: 768px) {
+            width: 100%;
+            margin-bottom: 50px;
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+        strong {
+            color: #fff;
+            margin: 30px 0;
+            font-size: 22px;
+        }
+        > img {
+            align-self: center;
+            width: fit-content;
+            @media screen and (max-width: 920px) {
+                max-width: 200px;
+            }
+        }
+    }
+    .logo-container img {
+        width: auto;
+        height: 30px;
+        margin: 0 8px;
+        @media screen and (max-width: 768px) {
+            height: 40px;
+        }
+    }
+    .browser img {
+        height: 35px;
+        @media screen and (max-width: 768px) {
+            height: 40px;
+        }
+    }
+    h2 {
+        margin-bottom: 60px;
+        align-self: center;
+    }
+}
+
+.devices-feature {
+    padding: 90px 0;
+}

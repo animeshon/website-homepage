@@ -1,0 +1,38 @@
+#mc_embed_signup form {
+    position: relative;
+    width: 92%;
+    max-width: 500px;
+    margin: 85px auto 0;
+    #mc_embed_signup_scroll {
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+    }
+    .mc-field-group {
+        flex: 1;
+    }
+    #mce-EMAIL {
+        width: 100%;
+        height: 50px;
+        font-size: 20px;
+        border-radius: 4px 0 0 4px;
+        border: none;
+        padding: 10px;
+    }
+    #mc-embedded-subscribe {
+        border: none;
+        height: 50px;
+        width: 140px;
+        font-size: 20px;
+        color: #fff;
+        text-transform: uppercase;
+        background-color: #e60011;
+        font-weight: lighter;
+        letter-spacing: 0.07em;
+        border-radius: 0 4px 4px 0;
+    }
+}
+
+.from-header form {
+    margin-top: 15px !important;
+}

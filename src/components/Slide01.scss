@@ -1,0 +1,68 @@
+.manga-feature {
+    background-color: #121212;
+    padding: 60px 0;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-direction: column;
+    .content {
+        max-width: 1280px;
+        width: calc(100% - 60px);
+        min-height: 10px;
+        display: flex;
+        align-self: center;
+        flex-direction: row;
+        .texts {
+            text-align: center;
+            line-height: 2;
+            font-size: 26px;
+            color: #fff;
+            min-width: 420px;
+            align-self: center;
+        }
+        hr {
+            margin: 25px 0;
+            border: 1px solid #2b2b2b;
+        }
+        .phones {
+            display: flex;
+            justify-content: flex-end;
+            img {
+                width: 80%;
+                min-width: 400px;
+            }
+        }
+        h3 {
+            color: #f0c808;
+        }
+    }
+    h2 {
+        margin-bottom: 60px;
+        align-self: center;
+        max-width: 500px;
+        width: calc(100% - 40px);
+        text-align: center;
+        img {
+            max-width: 100%;
+        }
+    }
+}
+
+.smartphones-feature {
+    @media screen and (max-width: 920px) {
+        .content {
+            flex-direction: column-reverse;
+            .texts {
+                max-width: 420px;
+                font-size: 22px;
+            }
+            .phones {
+                min-width: 100%;
+                img {
+                    max-width: 420px;
+                    margin: auto;
+                }
+            }
+        }
+    }
+}
