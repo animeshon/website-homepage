@@ -12,7 +12,7 @@ Then from CLI:
 npm install; npm run dev
 ```
 
-After the process is finished visit localhost:1234[http://localhost:1234].
+After the process is finished visit [localhost:1234](http://localhost:1234).
 
 If you want to create a production bundle do the following:
 
