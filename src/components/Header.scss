@@ -9,7 +9,7 @@
     padding: 60px;
     align-items: center;
     @media screen and (max-width: 768px) {
-        padding: 60px 0;
+        padding: 30px 0;
     }
     h1 {
         max-width: 1280px;
@@ -18,11 +18,17 @@
         align-self: center;
         img {
             width: 100%;
+            @media screen and (max-width: 768px) {
+                max-width: 600px;
+            }
         }
     }
     .brand {
         width: 220px;
         height: auto;
+        @media screen and (max-width: 768px) {
+            width: 150px;
+        }
     }
 }
 
@@ -40,6 +46,10 @@
         @media screen and (max-width: 768px) {
             font-size: 24px;
         }
+        @media screen and (max-width: 550px) {
+            font-size: 18px;
+            margin: 25px 0;
+        }
     }
     p {
         color: #fff;
@@ -47,5 +57,7 @@
         margin-top: 14px;
         font-size: 14px;
         line-height: 2;
+        width: 92%;
+        align-self: center;
     }
 }

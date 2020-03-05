@@ -21,7 +21,8 @@ const Header = ({ valueHeader, typeFunction }) => (
                 typeFunction={typeFunction}
             />
             <p>
-                Subscribe now and get 2 months for free when we start (3 € /
+                <strong>Subscribe now</strong> and get{' '}
+                <strong>2 months for free</strong> when we start ($4.99 /
                 months). <br />
                 No credit card required
             </p>

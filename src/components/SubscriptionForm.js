@@ -25,7 +25,7 @@ const SubscriptionForm = ({ source, value, typeFunction }) => (
                         type="email"
                         placeholder="E-mail"
                         onChange={e => typeFunction(e)}
-                        value={value}
+                        defaultValue={value}
                         name="EMAIL"
                         title={
                             source === 'header' ? 'valueHeader' : 'valueTrial'
@@ -54,7 +54,7 @@ const SubscriptionForm = ({ source, value, typeFunction }) => (
                         type="text"
                         name="b_50bc4bc337ccf99d1732c52c6_eb10f10fbc"
                         tabIndex="-1"
-                        value=""
+                        defaultValue=""
                     />
                 </div>
                 <input
