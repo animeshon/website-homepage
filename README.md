@@ -26,3 +26,8 @@ npm run prod
 -   [ ] Improvement on the background image of the trial section (darker image);
 -   [ ] Make sure to fix the mailchimp issues (2 forms in the same page, strange error messages);
 -   [ ] Improve the animation of the accordion;
+-   [ ] Footer with Comapny Name, VAT Number, etc.
+-   [ ] Automatic detection of the language
+-   [ ] Language selection
+-   [ ] Add Google Analytics
+-   [ ] Add Google Optimize
