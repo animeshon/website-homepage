@@ -1,0 +1,89 @@
+version: "1.0"
+stages:
+  - "clone"
+  - "build"
+  - "integration"
+  - "push"
+  - "deployment"
+steps:
+  clone:
+    type: "git-clone"
+    description: "Cloning main repository..."
+    repo: "animeshon/homepage"
+    revision: "${{CF_BRANCH}}"
+    stage: "clone"
+  build:
+    title: "Building Docker Image"
+    type: "build"
+    image_name: "animeshon/homepage"
+    tag: "${{CF_BRANCH_TAG_NORMALIZED}}"
+    dockerfile: "Dockerfile"
+    working_directory: "${{clone}}"
+    stage: "build"
+  parallel_push:
+    type: "parallel"
+    stage: "push"
+    steps:
+      push_cfcr:
+        title: "Pushing image to Codefresh Container Registry"
+        type: "push"
+        image_name: "homepage"
+        registry: "cfcr"
+        candidate: "${{build}}"
+        tags:
+          - "${{CF_BRANCH_TAG_NORMALIZED}}"
+          - "${{CF_REVISION}}"
+      push_gcr:
+        title: "Pushing image to Google Cloud Registry"
+        type: "push"
+        image_name: "homepage"
+        registry: "gcr-tier-0"
+        candidate: "${{build}}"
+        tags:
+          - "${{CF_BRANCH_TAG_NORMALIZED}}"
+          - "${{CF_REVISION}}"
+          - "latest"
+  prepare_plan:
+    image: "alpine:3.9"
+    title: "Setting up Terraform CLI"
+    stage: "deployment"
+    working_directory: "${{clone}}"
+    environment:
+      - "IMAGE_TAG=${{CF_REVISION}}"
+    commands:
+      - "./terraform/setup.sh"
+      - "./terraform/variables.sh"
+  plan:
+    image: "hashicorp/terraform:0.12.21"
+    title: "Generating Terraform plan"
+    stage: "deployment"
+    working_directory: "${{clone}}/terraform"
+    commands:
+      - "terraform init"
+      - "terraform plan"
+    when:
+      condition:
+        any:
+          isPullRequestOnMaster: '"${{CF_PULL_REQUEST_TARGET}}" == "master"'
+          isManuallyTriggered: '"${{CF_BUILD_TRIGGER}}" == "build"'
+#   approval_for_deploy:
+#     stage: "deployment"
+#     type: "pending-approval"
+#     title: "Waiting for deployment approval"
+#     when:
+#       condition:
+#         any:
+#           isManuallyTriggered: '"${{CF_BUILD_TRIGGER}}" == "build"'
+#   deploy:
+#     image: "hashicorp/terraform:0.12.21"
+#     title: "Executing Terraform plan"
+#     stage: "deployment"
+#     working_directory: "${{clone}}/terraform"
+#     commands:
+#       - "terraform init"
+#       - "terraform apply -auto-approve" 
+#     when:
+#       condition:
+#         any:
+#           isManuallyTriggered: '"${{CF_BUILD_TRIGGER}}" == "build"'
+#           isNotPullRequestOnMaster: '"${{CF_PULL_REQUEST_TARGET}}" != "master"'
