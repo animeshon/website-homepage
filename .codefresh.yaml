@@ -66,24 +66,24 @@ steps:
         any:
           isPullRequestOnMaster: '"${{CF_PULL_REQUEST_TARGET}}" == "master"'
           isManuallyTriggered: '"${{CF_BUILD_TRIGGER}}" == "build"'
-#   approval_for_deploy:
-#     stage: "deployment"
-#     type: "pending-approval"
-#     title: "Waiting for deployment approval"
-#     when:
-#       condition:
-#         any:
-#           isManuallyTriggered: '"${{CF_BUILD_TRIGGER}}" == "build"'
-#   deploy:
-#     image: "hashicorp/terraform:0.12.21"
-#     title: "Executing Terraform plan"
-#     stage: "deployment"
-#     working_directory: "${{clone}}/terraform"
-#     commands:
-#       - "terraform init"
-#       - "terraform apply -auto-approve" 
-#     when:
-#       condition:
-#         any:
-#           isManuallyTriggered: '"${{CF_BUILD_TRIGGER}}" == "build"'
-#           isNotPullRequestOnMaster: '"${{CF_PULL_REQUEST_TARGET}}" != "master"'
+  approval_for_deploy:
+    stage: "deployment"
+    type: "pending-approval"
+    title: "Waiting for deployment approval"
+    when:
+      condition:
+        any:
+          isManuallyTriggered: '"${{CF_BUILD_TRIGGER}}" == "build"'
+  deploy:
+    image: "hashicorp/terraform:0.12.21"
+    title: "Executing Terraform plan"
+    stage: "deployment"
+    working_directory: "${{clone}}/terraform"
+    commands:
+      - "terraform init"
+      - "terraform apply -auto-approve" 
+    when:
+      condition:
+        any:
+          isManuallyTriggered: '"${{CF_BUILD_TRIGGER}}" == "build"'
+          isNotPullRequestOnMaster: '"${{CF_PULL_REQUEST_TARGET}}" != "master"'
