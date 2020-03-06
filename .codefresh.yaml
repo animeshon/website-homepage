@@ -9,7 +9,7 @@ steps:
   clone:
     type: "git-clone"
     description: "Cloning main repository..."
-    repo: "animeshon/homepage"
+    repo: "animeshon/homepage-preview"
     revision: "${{CF_BRANCH}}"
     stage: "clone"
   build:
