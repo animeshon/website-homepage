@@ -54,7 +54,7 @@ steps:
       - "./terraform/setup.sh"
       - "./terraform/variables.sh"
   plan:
-    image: "hashicorp/terraform:0.12.21"
+    image: "hashicorp/terraform:0.12.23"
     title: "Generating Terraform plan"
     stage: "deployment"
     working_directory: "${{clone}}/terraform"
@@ -75,7 +75,7 @@ steps:
         any:
           isManuallyTriggered: '"${{CF_BUILD_TRIGGER}}" == "build"'
   deploy:
-    image: "hashicorp/terraform:0.12.21"
+    image: "hashicorp/terraform:0.12.23"
     title: "Executing Terraform plan"
     stage: "deployment"
     working_directory: "${{clone}}/terraform"
