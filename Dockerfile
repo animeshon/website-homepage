@@ -1,12 +1,22 @@
-FROM node:13 AS builder
+FROM node:13 AS dependencies
 
 WORKDIR /build
 
 COPY package*.json ./
 
 RUN npm install
+
+# ----------------------------------------------------------------
+FROM node:13 AS builder
+
+WORKDIR /build
+
+COPY --from=dependencies /build /build
+COPY . .
+
 RUN npm run prod
 
+# ----------------------------------------------------------------
 FROM nginx:alpine
 
 ENV PORT 8080

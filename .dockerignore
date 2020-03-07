@@ -1,0 +1,5 @@
+README.md
+Dockerfile
+.gitignore
+.codefresh.yaml
+.dockerignore
