@@ -2,7 +2,7 @@ FROM node:13 AS builder
 
 WORKDIR /build
 
-COPY . .
+COPY package*.json .
 
 RUN npm install
 RUN npm run prod
