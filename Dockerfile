@@ -22,7 +22,8 @@ FROM nginx:alpine
 ENV PORT 8080
 ENV HOST 0.0.0.0
 
-COPY --from=builder /build/dist /usr/share/nginx/html
+# COPY --from=builder /build/dist /usr/share/nginx/html
+COPY test.html /usr/share/nginx/html/index.html
 COPY nginx/default.conf /etc/nginx/conf.d/default.template
 COPY docker-entrypoint.sh /docker-entrypoint.sh
 
