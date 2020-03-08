@@ -1,47 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <!-- Anti-flicker snippet (recommended)  -->
         <script>
-            (function(a, s, y, n, c, h, i, d, e) {
-                s.className += ' ' + y;
-                h.start = 1 * new Date();
-                h.end = i = function() {
-                    s.className = s.className.replace(RegExp(' ?' + y), '');
-                };
-                (a[n] = a[n] || []).hide = h;
-                setTimeout(function() {
-                    i();
-                    h.end = null;
-                }, c);
-                h.timeout = c;
-            })(
-                window,
-                document.documentElement,
-                'async-hide',
-                'dataLayer',
-                4000,
-                { 'GTM-WPNFW73': true }
-            );
+            !(function(e, n, t, a, c, s, d, i, m) {
+                (n.className += ' ' + t),
+                    (s.start = 1 * new Date()),
+                    (s.end = d = function() {
+                        n.className = n.className.replace(RegExp(' ?' + t), '');
+                    }),
+                    ((e[a] = e[a] || []).hide = s),
+                    setTimeout(function() {
+                        d(), (s.end = null);
+                    }, 4e3),
+                    (s.timeout = 4e3);
+            })(window, document.documentElement, 'async-hide', 'dataLayer', 0, {
+                'GTM-WPNFW73': !0,
+            });
         </script>
-        <!-- Google Tag Manager -->
         <script>
-            (function(w, d, s, l, i) {
-                w[l] = w[l] || [];
-                w[l].push({
-                    'gtm.start': new Date().getTime(),
-                    event: 'gtm.js',
-                });
-                var f = d.getElementsByTagName(s)[0],
-                    j = d.createElement(s),
-                    dl = l != 'dataLayer' ? '&l=' + l : '';
-
-                j.async = true;
-                j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
-                f.parentNode.insertBefore(j, f);
-            })(window, document, 'script', 'dataLayer', 'GTM-WPNFW73');
+            !(function(e, t, a, n, g) {
+                (e[n] = e[n] || []),
+                    e[n].push({
+                        'gtm.start': new Date().getTime(),
+                        event: 'gtm.js',
+                    });
+                var m = t.getElementsByTagName(a)[0],
+                    r = t.createElement(a);
+                (r.async = !0),
+                    (r.src =
+                        'https://www.googletagmanager.com/gtm.js?id=GTM-WPNFW73'),
+                    m.parentNode.insertBefore(r, m);
+            })(window, document, 'script', 'dataLayer');
         </script>
-        <!-- End Google Tag Manager -->
     </head>
     <body>
         <!-- Google Tag Manager (noscript) -->
