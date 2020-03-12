@@ -2,69 +2,46 @@ import React from 'react';
 
 import './SubscriptionForm.scss';
 
-const SubscriptionForm = ({ source, value, typeFunction }) => (
+const SubscriptionForm = ({
+    source,
+    value,
+    typeFunction,
+    handleSubmit,
+    labels,
+    error,
+}) => (
     <div
-        id="mc_embed_signup"
+        id="mc-signup"
         className={
             source === 'header' ? 'from-header' : 'from-subscription-box'
         }
     >
         <form
-            action="https://animeshon.us20.list-manage.com/subscribe/post?u=50bc4bc337ccf99d1732c52c6&amp;id=eb10f10fbc"
-            method="post"
-            id="mc-embedded-subscribe-form"
-            name="mc-embedded-subscribe-form"
-            className="validate"
-            target="_blank"
-            noValidate
+            onSubmit={e => handleSubmit(e)}
+            id={source === 'header' ? 'valueHeader' : 'valueTrial'}
         >
-            <div id="mc_embed_signup_scroll">
+            <div id="mc-signup-scroll">
                 <div className="mc-field-group">
                     <input
                         aria-label="email"
                         type="email"
-                        placeholder="E-mail"
+                        placeholder={labels.placeholder}
                         onChange={e => typeFunction(e)}
                         defaultValue={value}
-                        name="EMAIL"
                         title={
                             source === 'header' ? 'valueHeader' : 'valueTrial'
                         }
-                        className="required email"
+                        className={`required email${error ? ' error' : ''}`}
                         id="mce-EMAIL"
                     />
                 </div>
-                <div id="mce-responses" className="clear">
-                    <div
-                        className="response"
-                        id="mce-error-response"
-                        style={{ display: 'none' }}
-                    />
-                    <div
-                        className="response"
-                        id="mce-success-response"
-                        style={{ display: 'none' }}
-                    />
-                </div>
-                <div
-                    style={{ position: 'absolute', left: '-5000px' }}
-                    aria-hidden="true"
-                >
-                    <input
-                        type="text"
-                        name="b_50bc4bc337ccf99d1732c52c6_eb10f10fbc"
-                        tabIndex="-1"
-                        defaultValue=""
-                    />
-                </div>
                 <input
-                    aria-label="Join Now"
+                    aria-label={labels.buttonLabel}
                     type="submit"
                     tabIndex="0"
-                    aria-pressed="false"
-                    value="Join Now"
+                    value={labels.buttonLabel}
                     name="subscribe"
-                    id="mc-embedded-subscribe"
+                    id="mc-subscribe"
                     className="button"
                 />
             </div>

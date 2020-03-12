@@ -13,36 +13,36 @@ import Safari from '../assets/safari-icon.png';
 
 import './Slide02.scss';
 
-const AppSupport = () => (
+const AppSupport = ({ strings }) => (
     <div className="manga-feature devices-feature">
         <h2>
-            <img src={Headline} alt="Better Manga Experience" />
+            <img src={Headline} alt={strings.headline} />
         </h2>
         <div className="content support">
             <div className="feature01">
-                <img src={Phone} alt="Smartphone Icon" />
-                <strong>Mobile</strong>
+                <img src={Phone} alt={strings.mobileIcon} />
+                <strong>{strings.featureDeviceMobile}</strong>
                 <div className="logo-container">
-                    <img src={AppStore} alt="Apple Store Badge" />
-                    <img src={PlayStore} alt="Play Store Badge" />
+                    <img src={AppStore} alt={strings.appStoreAltText} />
+                    <img src={PlayStore} alt={strings.googlePlayAltText} />
                 </div>
             </div>
             <div className="feature02">
-                <img src={Tablet} alt="Tablet Icon" />
-                <strong>Tablet</strong>
+                <img src={Tablet} alt={strings.tabletIcon} />
+                <strong>{strings.featureDeviceTablet}</strong>
                 <div className="logo-container">
-                    <img src={AppStore} alt="Apple Store Badge" />
-                    <img src={PlayStore} alt="Play Store Badge" />
+                    <img src={AppStore} alt={strings.appStoreAltText} />
+                    <img src={PlayStore} alt={strings.googlePlayAltText} />
                 </div>
             </div>
             <div className="feature03">
-                <img src={Laptop} alt="Computer Icon" />
-                <strong>Computer</strong>
+                <img src={Laptop} alt={strings.computerIcon} />
+                <strong>{strings.featureDeviceComputer}</strong>
                 <div className="logo-container browser">
-                    <img src={Chrome} alt="Chrome Browser Icon" />
-                    <img src={Firefox} alt="Firefox Browser Icon" />
-                    <img src={Edge} alt="Edge Browser Icon" />
-                    <img src={Safari} alt="Safari Browser Icon" />
+                    <img src={Chrome} alt={strings.chromeAltText} />
+                    <img src={Firefox} alt={strings.firefoxAltText} />
+                    <img src={Edge} alt={strings.edgeAltText} />
+                    <img src={Safari} alt={strings.safariAltText} />
                 </div>
             </div>
         </div>

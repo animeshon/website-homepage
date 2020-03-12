@@ -111,6 +111,7 @@ section {
 body {
     line-height: 1;
     font-family: 'Open Sans', Arial, Helvetica, sans-serif;
+    background-color: #121212;
 }
 
 ol,
@@ -150,4 +151,17 @@ table {
 
 .async-hide {
     opacity: 0 !important;
+}
+
+// commons
+
+.lang-selector {
+    width: 100%;
+    background-color: black;
+    position: fixed;
+    span {
+        display: inline-block;
+        padding: 10px;
+        cursor: pointer;
+    }
 }
