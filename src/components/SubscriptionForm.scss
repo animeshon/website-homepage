@@ -1,9 +1,9 @@
-#mc_embed_signup form {
+#mc-signup form {
     position: relative;
     width: 92%;
     max-width: 500px;
     margin: 85px auto 0;
-    #mc_embed_signup_scroll {
+    #mc-signup-scroll {
         display: flex;
         flex-direction: row;
         width: 100%;
@@ -22,7 +22,7 @@
             font-size: 16px;
         }
     }
-    #mc-embedded-subscribe {
+    #mc-subscribe {
         border: none;
         height: 50px;
         width: 140px;
@@ -44,4 +44,24 @@
 
 .from-header form {
     margin-top: 15px !important;
+}
+
+p.error,
+p.success {
+    align-self: center;
+    text-align: center;
+    min-width: 300px;
+    max-width: 400px;
+    width: 100%;
+    color: rgb(255, 255, 255);
+    padding: 8px;
+    margin: 10px;
+    background-color: #e60011;
+    border-radius: 4px;
+    font-size: 14px;
+    line-height: 1.3;
+    margin-bottom: 0;
+}
+p.success {
+    background-color: #00d833;
 }
