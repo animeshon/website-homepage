@@ -129,8 +129,6 @@ class App extends React.Component {
             lang,
         } = this.state;
 
-        console.log(lang);
-
         if (dataLang !== undefined) {
             return (
                 <StrictMode>
