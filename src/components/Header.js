@@ -18,12 +18,16 @@ const Header = ({
         <img className="brand" src={Brand} alt="Animeshon Logo" />
         <div className="subscription-box">
 <<<<<<< HEAD
+<<<<<<< HEAD
             <h1>
                 <img className="slogan" src={Hero} alt="Manga Charachters" />
             </h1>
 =======
             <h1>{strings.headerTitle}</h1>
 >>>>>>> 8a99de9a1cb76cde78c7a6a895612bd5fcdfc6ab
+=======
+            <h1>{strings.headerTitle}</h1>
+>>>>>>> added all the changes needed
             <h2>{strings.headerUnderline}</h2>
             <SubscriptionForm
                 source="header"

@@ -80,7 +80,13 @@ export const stringsLang = lang => {
                     headerUnderline: 'Read and watch anywhere in any language',
                     headerFormPlaceholder: 'E-mail',
                     headerFormButton: 'Join Now',
+<<<<<<< HEAD
                     headerFormDisclaimer: `Start your 30 days of free trial. Subscription is only 5.99€/month. No credit card required.`,
+=======
+                    headerFormDisclaimer: `Get free trial for a month
+                                           When we start 5.99€ /month
+                                           No credit card required`,
+>>>>>>> added all the changes needed
                 },
                 firstFeature: {
                     headline: 'Better Manga Experience',
