@@ -126,32 +126,29 @@ class App extends React.Component {
             valueHeaderSuccess,
             valueTrialSuccess,
             dataLang,
+            lang,
         } = this.state;
+
+        console.log(lang);
 
         if (dataLang !== undefined) {
             return (
                 <StrictMode>
-                    <div className="lang-selector" style={{ color: '#fff' }}>
+                    <div className="lang-selector">
                         <span // eslint-disable-line
                             data-lang="en"
                             onClick={e => this.changeLanguage(e)}
-                        >
-                            EN
-                        </span>
-                        &emsp;
+                            className={`flags uk${
+                                lang.includes('en') ? ' selected' : ''
+                            }`}
+                        />
                         <span // eslint-disable-line
-                            data-lang="it"
+                            data-lang="jp"
                             onClick={e => this.changeLanguage(e)}
-                        >
-                            IT
-                        </span>
-                        &emsp;
-                        <span // eslint-disable-line
-                            data-lang="de"
-                            onClick={e => this.changeLanguage(e)}
-                        >
-                            DE
-                        </span>
+                            className={`flags jp${
+                                lang.includes('jp') ? ' selected' : ''
+                            }`}
+                        />
                     </div>
                     <Header
                         strings={dataLang.header || {}}

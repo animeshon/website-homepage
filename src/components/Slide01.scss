@@ -30,6 +30,7 @@
             img {
                 width: 80%;
                 min-width: 400px;
+                object-fit: scale-down;
             }
         }
         h3 {
@@ -42,12 +43,12 @@
         max-width: 500px;
         width: calc(100% - 40px);
         text-align: center;
-        img {
-            max-width: 100%;
-            @media screen and (max-width: 768px) {
-                max-height: 20px;
-            }
-        }
+        font-family: 'komika_displayregular';
+        color: #fff;
+        font-size: 30px;
+        font-weight: 100;
+        text-transform: uppercase;
+        letter-spacing: 0.02em;
     }
 }
 

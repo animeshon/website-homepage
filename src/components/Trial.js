@@ -2,8 +2,6 @@ import React from 'react';
 
 import SubscriptionForm from './SubscriptionForm';
 
-import Headline from '../assets/feature03-headline.png';
-
 import './Trial.scss';
 
 const Trial = ({
@@ -15,10 +13,8 @@ const Trial = ({
     strings,
 }) => (
     <div className="manga-feature trial-feature">
-        <h2>
-            <img src={Headline} alt={strings.headline} />
-        </h2>
-        <p className="paragraph">{strings.paragraph}</p>
+        <h2>{strings.headline}</h2>
+        {strings.paragraph && <p className="paragraph">{strings.paragraph}</p>}
         <SubscriptionForm
             value={valueTrial}
             typeFunction={typeFunction}

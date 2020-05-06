@@ -1,6 +1,5 @@
 import React from 'react';
 
-import Headline from '../assets/feature02-headline.png';
 import Phone from '../assets/smartphone-icon.png';
 import Tablet from '../assets/tablet-icon.png';
 import Laptop from '../assets/laptop-icon.png';
@@ -15,9 +14,7 @@ import './Slide02.scss';
 
 const AppSupport = ({ strings }) => (
     <div className="manga-feature devices-feature">
-        <h2>
-            <img src={Headline} alt={strings.headline} />
-        </h2>
+        <h2>{strings.headline}</h2>
         <div className="content support">
             <div className="feature01">
                 <img src={Phone} alt={strings.mobileIcon} />
