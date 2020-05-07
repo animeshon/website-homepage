@@ -50,7 +50,7 @@ class App extends React.Component {
         };
 
         if (checkValidity(this.state[e.target.id]) === true) {
-            fetch('http://localhost:3000/addNew', {
+            fetch('https://mailchimp-api.animeshon.com/addNew', {
                 method: 'POST',
                 body: JSON.stringify(requestBody),
                 mode: 'cors',
