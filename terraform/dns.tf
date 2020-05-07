@@ -8,11 +8,11 @@ locals {
 locals {
   dns_records = {
     "A" = [
-      for rr in google_cloud_run_domain_mapping.homepage.status.resource_records :
+      for rr in google_cloud_run_domain_mapping.homepage.status[0].resource_records :
       rr.rrdata if rr.type == "A"
     ]
     "AAAA" = [
-      for rr in google_cloud_run_domain_mapping.homepage.status.resource_records :
+      for rr in google_cloud_run_domain_mapping.homepage.status[0].resource_records :
       rr.rrdata if rr.type == "AAAA"
     ]
   }
