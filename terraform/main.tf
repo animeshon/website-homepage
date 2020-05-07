@@ -34,7 +34,7 @@ resource "google_cloud_run_service" "homepage" {
 
         env {
           name  = "HOST"
-          value = "preview.animeshon.com"
+          value = "animeshon.com"
         }
 
         resources {
@@ -53,11 +53,11 @@ resource "google_cloud_run_service" "homepage" {
   }
 }
 
-# Configure the domain name mapping for the instance to homepage.animeshon.com.
+# Configure the domain name mapping for the instance to animeshon.com.
 resource "google_cloud_run_domain_mapping" "homepage" {
   project  = google_cloud_run_service.homepage.project
   location = google_cloud_run_service.homepage.location
-  name     = "preview.animeshon.com"
+  name     = "@.animeshon.com"
 
   metadata {
     namespace = data.terraform_remote_state.root.outputs.project_id
@@ -68,7 +68,7 @@ resource "google_cloud_run_domain_mapping" "homepage" {
   }
 }
 
-# Allow everyone to access this instance from homepage.animeshon.com.
+# Allow everyone to access this instance from animeshon.com.
 data "google_iam_policy" "noauth" {
   binding {
     role = "roles/run.invoker"
