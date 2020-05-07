@@ -7,7 +7,7 @@ locals {
 # Setup homepage preview subdomain managed by Google Cloud Run.
 resource "google_dns_record_set" "homepage" {
   project      = local.zone_project_id
-  name         = "preview.${local.zone_dns_name}"
+  name         = "@.${local.zone_dns_name}"
   managed_zone = local.zone_name
   type         = "CNAME"
   ttl          = 300

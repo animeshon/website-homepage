@@ -57,7 +57,7 @@ resource "google_cloud_run_service" "homepage" {
 resource "google_cloud_run_domain_mapping" "homepage" {
   project  = google_cloud_run_service.homepage.project
   location = google_cloud_run_service.homepage.location
-  name     = "@.animeshon.com"
+  name     = "animeshon.com"
 
   metadata {
     namespace = data.terraform_remote_state.root.outputs.project_id
