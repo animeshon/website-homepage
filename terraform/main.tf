@@ -1,5 +1,5 @@
 provider "google" {
-  version = "~> 3.6"
+  version = "~> 3.20"
 }
 
 # NOTE: A new id is generated each time we switch to a new image tag.
