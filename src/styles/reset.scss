@@ -164,4 +164,26 @@ table {
         padding: 10px;
         cursor: pointer;
     }
+    .flags {
+        width: 30px;
+        height: 20px;
+        background-size: cover;
+        background-position: center center;
+        background-repeat: no-repeat;
+        margin: 10px 0 10px 10px;
+        outline: 1px solid transparent;
+        border: 2px solid transparent;
+        &.jp {
+            background-image: url(../assets/jp-flag.svg);
+        }
+        &.uk {
+            background-image: url(../assets/uk-flag.svg);
+        }
+        &.selected {
+            outline: 1px solid white;
+            border: 2px solid #000;
+        }
+    }
 }
+
+@import './fontface.scss';

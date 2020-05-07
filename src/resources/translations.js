@@ -1,208 +1,37 @@
 export const stringsLang = lang => {
     switch (lang) {
-        case 'it':
+        // ------------------------
+        // ------------------------
+        // JAPANESE
+        // ------------------------
+        // ------------------------
+        case 'jp':
             return {
                 header: {
-                    headerTitle:
-                        'Scopri nuovi ed entusiasmanti manga da mangaka indipendenti',
-                    headerUnderline: 'Leggi ovunque. Cancelli quando vuoi.',
-                    headerFormPlaceholder: 'E-mail',
-                    headerFormButton: 'Iscriviti',
-                    headerFormDisclaimer: `Iscriviti ora e avrai 2 mesi gratis e poi $4.99 al mese.\n\n
-                    Non hai bisogno di carte di credito. Yay!`,
-                },
-                firstFeature: {
-                    headline: "Leggi nuovi manga come mai prima d'ora",
-                    featureOne: 'Addio alle traduzioni senza senso',
-                    featureTwo: 'Addio alla pubblicità aggressiva',
-                    featureThree: 'Una tonnellata di manga',
-                    featureFour: 'Supporta nuovi autori e nuovi manga',
-                    priceFeature:
-                        'Solo $4.99 al mese per tutti i manga che vuoi',
-                    imageOneAltText:
-                        'iPhone che mostrano la app di Animeshon.com',
-                },
-                secondFeature: {
-                    headline: 'Connetti fino a 4 dispositivi!',
-                    featureDeviceMobile: 'Smartphone',
-                    featureDeviceTablet: 'Tablet',
-                    featureDeviceComputer: 'Computer',
-                    mobileIcon: 'Smartphone Icon',
-                    tabletIcon: 'Tablet Icon',
-                    computerIcon: 'Computer Icon',
-                    googlePlayAltText: 'Badge Google Play',
-                    appStoreAltText: 'Badge App Store di Apple',
-                    chromeAltText: 'Google Chrome Browser',
-                    firefoxAltText: 'Mozilla Firefox Browser',
-                    edgeAltText: 'Microsoft Edge Browser',
-                    safariAltText: 'Apple Safari Browser',
-                },
-                trialFeature: {
-                    headline: 'Provalo Gratis Ora!',
-                    paragraph:
-                        'Morbi sit amet diam id quam rutrum finibus. Praesent venenatis diam nec diam facilisis, ut pharetra quam cursus.',
-                    trialFormPlaceholder: 'E-mail',
-                    trialFormButton: 'Iscriviti',
-                },
-                faq: {
-                    headline: 'FAQ',
-                    questionOne: 'Quando verrà riliasciato Animeson?',
-                    responseOne: `Nullam sit amet vulputate lorem, in venenatis dui.
-                    Vestibulum ut purus sollicitudin, imperdiet diam non, placerat erat.
-                    Duis felis quam, auctor a consequat ac, consequat at enim. Suspendisse
-                    quis volutpat eros. Vivamus at pulvinar arcu. Vivamus suscipit urna in
-                    dapibus condimentum. Integer hendrerit augue nibh, dapibus accumsan tellus
-                    porttitor et. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                    Nulla luctus purus eget augue molestie mollis. Phasellus diam mi,
-                    gravida at imperdiet non, congue ut libero. Maecenas sem dolor,
-                    posuere nec elementum a, maximus id tellus. Nullam porttitor ultrices felis,
-                    et ornare purus scelerisque at.`,
-                    questionTwo: 'Su quali dispositivi potrò usare Animeshon?',
-                    responseTwo: `Nullam sit amet vulputate lorem, in venenatis dui.
-                    Vestibulum ut purus sollicitudin, imperdiet diam non, placerat erat.
-                    Duis felis quam, auctor a consequat ac, consequat at enim. Suspendisse
-                    quis volutpat eros. Vivamus at pulvinar arcu. Vivamus suscipit urna in
-                    dapibus condimentum. Integer hendrerit augue nibh, dapibus accumsan tellus
-                    porttitor et. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                    Nulla luctus purus eget augue molestie mollis. Phasellus diam mi,
-                    gravida at imperdiet non, congue ut libero. Maecenas sem dolor,
-                    posuere nec elementum a, maximus id tellus. Nullam porttitor ultrices felis,
-                    et ornare purus scelerisque at.`,
-                    questionThree: 'Di che connessione ho bisogno?',
-                    responseThree: `Nullam sit amet vulputate lorem, in venenatis dui.
-                    Vestibulum ut purus sollicitudin, imperdiet diam non, placerat erat.
-                    Duis felis quam, auctor a consequat ac, consequat at enim. Suspendisse
-                    quis volutpat eros. Vivamus at pulvinar arcu. Vivamus suscipit urna in
-                    dapibus condimentum. Integer hendrerit augue nibh, dapibus accumsan tellus
-                    porttitor et. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                    Nulla luctus purus eget augue molestie mollis. Phasellus diam mi,
-                    gravida at imperdiet non, congue ut libero. Maecenas sem dolor,
-                    posuere nec elementum a, maximus id tellus. Nullam porttitor ultrices felis,
-                    et ornare purus scelerisque at.`,
-                    questionFour: 'Come faccio a creare un account?',
-                    responseFour: `Nullam sit amet vulputate lorem, in venenatis dui.
-                    Vestibulum ut purus sollicitudin, imperdiet diam non, placerat erat.
-                    Duis felis quam, auctor a consequat ac, consequat at enim. Suspendisse
-                    quis volutpat eros. Vivamus at pulvinar arcu. Vivamus suscipit urna in
-                    dapibus condimentum. Integer hendrerit augue nibh, dapibus accumsan tellus
-                    porttitor et. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                    Nulla luctus purus eget augue molestie mollis. Phasellus diam mi,
-                    gravida at imperdiet non, congue ut libero. Maecenas sem dolor,
-                    posuere nec elementum a, maximus id tellus. Nullam porttitor ultrices felis,
-                    et ornare purus scelerisque at.`,
-                },
-            };
-        case 'de':
-            return {
-                header: {
-                    headerTitle:
-                        'Scopri nuovi ed entusiasmanti manga da mangaka indipendenti',
-                    headerUnderline: 'D Leggi ovunque. Cancelli quando vuoi.',
-                    headerFormPlaceholder: 'D E-mail',
-                    headerFormButton: 'D Iscriviti',
-                    headerFormDisclaimer: `D Iscriviti ora e avrai 2 mesi gratis e poi $4.99 al mese.\n\n
-                        Non hai bisogno di carte di credito. Yay!`,
-                },
-                firstFeature: {
-                    headline: "D Leggi nuovi manga come mai prima d'ora",
-                    featureOne: 'D Addio alle traduzioni senza senso',
-                    featureTwo: 'D Addio alla pubblicità aggressiva',
-                    featureThree: 'D Una tonnellata di manga',
-                    featureFour:
-                        'D Supporta e sugui nuovi autori e nuovi manga',
-                    priceFeature:
-                        'D Solo $4.99 al mese per tutti i manga che voui',
-                    imageOneAltText:
-                        'D iPhone che mostrano la app di Animeshon.com',
-                },
-                secondFeature: {
-                    headline: 'D Connetti fino a 4 dispositivi!',
-                    featureDeviceMobile: 'D Smartphone',
-                    featureDeviceTablet: 'D Tablet',
-                    featureDeviceComputer: 'D Computer',
-                    googlePlayAltText: 'D Google Play',
-                    appStoreAltText: 'D App Store di Apple',
-                    chromeAltText: 'D Google Chrome Browser',
-                    firefoxAltText: 'D Mozilla Firefox Browser',
-                    edgeAltText: 'D Microsoft Edge Browser',
-                    safariAltText: 'D Apple Safari Browser',
-                },
-                trialFeature: {
-                    headline: 'D Provalo Gratis Ora!',
-                    paragraph:
-                        'D Morbi sit amet diam id quam rutrum finibus. Praesent venenatis diam nec diam facilisis, ut pharetra quam cursus.',
-                    trialFormPlaceholder: 'D E-mail',
-                    trialFormButton: 'D Iscriviti',
-                },
-                faq: {
-                    questionOne: 'D When Animeshon will be released?',
-                    responseOne: `Nullam sit amet vulputate lorem, in venenatis dui.
-                        Vestibulum ut purus sollicitudin, imperdiet diam non, placerat erat.
-                        Duis felis quam, auctor a consequat ac, consequat at enim. Suspendisse
-                        quis volutpat eros. Vivamus at pulvinar arcu. Vivamus suscipit urna in
-                        dapibus condimentum. Integer hendrerit augue nibh, dapibus accumsan tellus
-                        porttitor et. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                        Nulla luctus purus eget augue molestie mollis. Phasellus diam mi,
-                        gravida at imperdiet non, congue ut libero. Maecenas sem dolor,
-                        posuere nec elementum a, maximus id tellus. Nullam porttitor ultrices felis,
-                        et ornare purus scelerisque at.`,
-                    questionTwo: 'D What devices are compatible with Animeson?',
-                    responseTwo: `Nullam sit amet vulputate lorem, in venenatis dui.
-                        Vestibulum ut purus sollicitudin, imperdiet diam non, placerat erat.
-                        Duis felis quam, auctor a consequat ac, consequat at enim. Suspendisse
-                        quis volutpat eros. Vivamus at pulvinar arcu. Vivamus suscipit urna in
-                        dapibus condimentum. Integer hendrerit augue nibh, dapibus accumsan tellus
-                        porttitor et. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                        Nulla luctus purus eget augue molestie mollis. Phasellus diam mi,
-                        gravida at imperdiet non, congue ut libero. Maecenas sem dolor,
-                        posuere nec elementum a, maximus id tellus. Nullam porttitor ultrices felis,
-                        et ornare purus scelerisque at.`,
-                    questionThree: 'D What is the necessary bandwidth?',
-                    responseThree: `Nullam sit amet vulputate lorem, in venenatis dui.
-                        Vestibulum ut purus sollicitudin, imperdiet diam non, placerat erat.
-                        Duis felis quam, auctor a consequat ac, consequat at enim. Suspendisse
-                        quis volutpat eros. Vivamus at pulvinar arcu. Vivamus suscipit urna in
-                        dapibus condimentum. Integer hendrerit augue nibh, dapibus accumsan tellus
-                        porttitor et. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                        Nulla luctus purus eget augue molestie mollis. Phasellus diam mi,
-                        gravida at imperdiet non, congue ut libero. Maecenas sem dolor,
-                        posuere nec elementum a, maximus id tellus. Nullam porttitor ultrices felis,
-                        et ornare purus scelerisque at.`,
-                    questionFour: 'D How do I create a Animeshon account?',
-                    responseFour: `Nullam sit amet vulputate lorem, in venenatis dui.
-                        Vestibulum ut purus sollicitudin, imperdiet diam non, placerat erat.
-                        Duis felis quam, auctor a consequat ac, consequat at enim. Suspendisse
-                        quis volutpat eros. Vivamus at pulvinar arcu. Vivamus suscipit urna in
-                        dapibus condimentum. Integer hendrerit augue nibh, dapibus accumsan tellus
-                        porttitor et. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                        Nulla luctus purus eget augue molestie mollis. Phasellus diam mi,
-                        gravida at imperdiet non, congue ut libero. Maecenas sem dolor,
-                        posuere nec elementum a, maximus id tellus. Nullam porttitor ultrices felis,
-                        et ornare purus scelerisque at.`,
-                },
-            };
-        default:
-            return {
-                header: {
-                    headerTitle: 'Discover New Manga From Indipendent Mangaka.',
-                    headerUnderline: 'Read anywhere. Cancel anytime.',
+                    headerTitle: 'イタリア発の漫画プラットフォーム',
+                    headerUnderline:
+                        '日本語や英語はもちろんその他の言語でも漫画をお読みいただけま',
                     headerFormPlaceholder: 'E-mail',
                     headerFormButton: 'Join Now',
-                    headerFormDisclaimer: `Subscribe now and get 2 months for free when we start ($4.99 / months).
-                        No credit card required`,
+                    headerFormDisclaimer: `1ヶ月間無料お試し
+                                           お試し期間終了後は月5.99€
+                                           クレジットカード登録不要`,
                 },
                 firstFeature: {
-                    headline: 'Better Manga Experience',
-                    featureOne: 'No more bad translations',
-                    featureTwo: 'No aggressive advertisement',
-                    featureThree: 'Huge amount of mangas',
-                    featureFour: 'Support new artists and mangas',
-                    priceFeature:
-                        'Only $4.99 / per months for your daily manga urge',
+                    headline:
+                        'イタリアのIT企業が開発した最新のデジタル漫画技術',
+                    featureOne: 'フェアトレード漫画',
+                    featureTwo: 'スマートリーディング',
+                    featureThree: '多彩なオリジナル漫画',
+                    featureFour: '漫画家を直接応援可能',
+                    featureFive: '毎週新作品をお届け',
+                    featureSix: '広告なし',
+                    featureSeven: 'No more bad translations',
+                    priceFeature: 'たった5.99€/月で漫画読み放題',
                     imageOneAltText: 'iPhones displaying the Animeshon.com app',
                 },
                 secondFeature: {
-                    headline: 'Connect up to 4 devices!',
+                    headline: 'スマホ、タブレット、パソコンでご利用可能',
                     featureDeviceMobile: 'Mobile',
                     featureDeviceTablet: 'Tablet',
                     featureDeviceComputer: 'Computer',
@@ -214,57 +43,99 @@ export const stringsLang = lang => {
                     safariAltText: 'Apple Safari Browser',
                 },
                 trialFeature: {
-                    headline: 'Get your free trial',
-                    paragraph:
-                        'Morbi sit amet diam id quam rutrum finibus. Praesent venenatis diam nec diam facilisis, ut pharetra quam cursus.',
+                    headline: '無料登録で、新しい漫画をお読みいただけます',
+                    paragraph: '今までにない漫画の体験をしましょう',
                     trialFormPlaceholder: 'E-mail',
                     trialFormButton: 'Join Now',
                 },
                 faq: {
-                    questionOne: 'When Animeshon will be released?',
-                    responseOne: `Nullam sit amet vulputate lorem, in venenatis dui.
-                    Vestibulum ut purus sollicitudin, imperdiet diam non, placerat erat.
-                    Duis felis quam, auctor a consequat ac, consequat at enim. Suspendisse
-                    quis volutpat eros. Vivamus at pulvinar arcu. Vivamus suscipit urna in
-                    dapibus condimentum. Integer hendrerit augue nibh, dapibus accumsan tellus
-                    porttitor et. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                    Nulla luctus purus eget augue molestie mollis. Phasellus diam mi,
-                    gravida at imperdiet non, congue ut libero. Maecenas sem dolor,
-                    posuere nec elementum a, maximus id tellus. Nullam porttitor ultrices felis,
-                    et ornare purus scelerisque at.`,
-                    questionTwo: 'What devices are compatible with Animeson?',
-                    responseTwo: `Nullam sit amet vulputate lorem, in venenatis dui.
-                    Vestibulum ut purus sollicitudin, imperdiet diam non, placerat erat.
-                    Duis felis quam, auctor a consequat ac, consequat at enim. Suspendisse
-                    quis volutpat eros. Vivamus at pulvinar arcu. Vivamus suscipit urna in
-                    dapibus condimentum. Integer hendrerit augue nibh, dapibus accumsan tellus
-                    porttitor et. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                    Nulla luctus purus eget augue molestie mollis. Phasellus diam mi,
-                    gravida at imperdiet non, congue ut libero. Maecenas sem dolor,
-                    posuere nec elementum a, maximus id tellus. Nullam porttitor ultrices felis,
-                    et ornare purus scelerisque at.`,
-                    questionThree: 'What is the necessary bandwidth?',
-                    responseThree: `Nullam sit amet vulputate lorem, in venenatis dui.
-                    Vestibulum ut purus sollicitudin, imperdiet diam non, placerat erat.
-                    Duis felis quam, auctor a consequat ac, consequat at enim. Suspendisse
-                    quis volutpat eros. Vivamus at pulvinar arcu. Vivamus suscipit urna in
-                    dapibus condimentum. Integer hendrerit augue nibh, dapibus accumsan tellus
-                    porttitor et. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                    Nulla luctus purus eget augue molestie mollis. Phasellus diam mi,
-                    gravida at imperdiet non, congue ut libero. Maecenas sem dolor,
-                    posuere nec elementum a, maximus id tellus. Nullam porttitor ultrices felis,
-                    et ornare purus scelerisque at.`,
-                    questionFour: 'How do I create a Animeshon account?',
-                    responseFour: `Nullam sit amet vulputate lorem, in venenatis dui.
-                    Vestibulum ut purus sollicitudin, imperdiet diam non, placerat erat.
-                    Duis felis quam, auctor a consequat ac, consequat at enim. Suspendisse
-                    quis volutpat eros. Vivamus at pulvinar arcu. Vivamus suscipit urna in
-                    dapibus condimentum. Integer hendrerit augue nibh, dapibus accumsan tellus
-                    porttitor et. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                    Nulla luctus purus eget augue molestie mollis. Phasellus diam mi,
-                    gravida at imperdiet non, congue ut libero. Maecenas sem dolor,
-                    posuere nec elementum a, maximus id tellus. Nullam porttitor ultrices felis,
-                    et ornare purus scelerisque at.`,
+                    headline: 'FAQ',
+                    questionOne: 'Animeshonはどんなサービスですか？',
+                    responseOne: `Animeshonは世界中のお客様と日本の漫画家の架け橋をし、お互いに支え合える場を提供します。プラットフォームでは漫画を各言語でお読みいただくことができます。`,
+                    questionTwo: '利用料はいくらですか？',
+                    responseTwo: `月額5.99€で、漫画読み放題です。全ての収入は漫画家とシェアし、今後の活動に役立てていただきます。`,
+                    questionThree: 'フェアトレード漫画とは何ですか？',
+                    responseThree: `フェアトレード漫画とは、適切な労働条件、
+                                    フェアな利益配分、持続可能性をもとに作られた漫画で、
+                                    漫画家の生活水準向上を目指します。
+                                    多くの漫画家は厳しい経済状況及び労働状況で、
+                                    漫画を制作しており、継続が難しくなる場合がほとんどです。
+                                    また、海外では、言語の壁のため、漫画の流通が非常に限られており、
+                                    海賊版が横行しています。このままでは、
+                                    海賊版サイトに日本の漫画産業が潰されてしまいます。
+                                    そこで、Animeshonはフェアトレード漫画を推進しています。`,
+                    questionFour: '',
+                    responseFour: ``,
+                },
+            };
+        // ------------------------
+        // ------------------------
+        // ENGLISH
+        // ------------------------
+        // ------------------------
+        default:
+            return {
+                header: {
+                    headerTitle: 'Experience new Manga from Japan',
+                    headerUnderline: 'Read and watch anywhere in any language',
+                    headerFormPlaceholder: 'E-mail',
+                    headerFormButton: 'Join Now',
+                    headerFormDisclaimer: `Get free trial for a month
+                                           When we start 5.99€ /month
+                                           No credit card required`,
+                },
+                firstFeature: {
+                    headline: 'Better Manga Experience',
+                    featureOne: 'Fair-trade Manga',
+                    featureTwo: 'Smart reading',
+                    featureThree: 'Variety of original Manga',
+                    featureFour: 'Support Manga artists directly',
+                    featureFive: 'New chapters every week',
+                    featureSix: 'No more aggressive ads',
+                    featureSeven: 'No more bad translations',
+                    priceFeature:
+                        'Only 5.99€/month for unlimited Manga entertainment',
+                    imageOneAltText: 'iPhones displaying the Animeshon.com app',
+                },
+                secondFeature: {
+                    headline: 'Connect to your devices!',
+                    featureDeviceMobile: 'Mobile',
+                    featureDeviceTablet: 'Tablet',
+                    featureDeviceComputer: 'Computer',
+                    googlePlayAltText: 'Google Play',
+                    appStoreAltText: 'Apple App Store',
+                    chromeAltText: 'Google Chrome Browser',
+                    firefoxAltText: 'Mozilla Firefox Browser',
+                    edgeAltText: 'Microsoft Edge Browser',
+                    safariAltText: 'Apple Safari Browser',
+                },
+                trialFeature: {
+                    headline: 'Subscribe now and read new Manga',
+                    paragraph: 'Discover Manga you have never read before.',
+                    trialFormPlaceholder: 'E-mail',
+                    trialFormButton: 'Join Now',
+                },
+                faq: {
+                    headline: 'FAQ',
+                    questionOne: 'What is Animeshon?',
+                    responseOne: `Animsheon is a platform where users can consume Manga produced by
+                                  independent Japanese Manga artists. We build a bridge between users in the world
+                                  and Manga artists in Japan and offer a place where both of them can support each
+                                  other.`,
+                    questionTwo: 'How much does Animeshon cost?',
+                    responseTwo: `We offer a 5.99€/month plan for unlimited access to all content.
+                                  All revenues are shared with Manga artists, giving them the possibility to
+                                  continue and improve their production. `,
+                    questionThree: 'What is fair-trade Manga?',
+                    responseThree: `There are a lot of illegal platforms where you can read Manga for free,
+                                  but using those platforms wouldn’t support artists and could even destroy 
+                                  the Manga industry. Moreover, the average income of Manga artists is very low, 
+                                  and often that makes it difficult to continue producing Manga. Therefore, 
+                                  we provide fairtrade Manga. Fairtrade Manga is Manga made under fair 
+                                  distribution terms, decent working conditions, fair revenue share, and 
+                                  sustainability, enabling Manga artists to improve their life.`,
+                    questionFour: '',
+                    responseFour: ``,
                 },
             };
     }
