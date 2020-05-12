@@ -19,9 +19,9 @@ locals {
 }
 
 resource "google_dns_record_set" "homepage" {
-  for_each = local.managed_zone_project_id
+  for_each = local.dns_records
 
-  project      = local.zone_project_id
+  project      = local.managed_zone_project_id
   name         = "@.${local.managed_zone_dns_name}"
   managed_zone = local.managed_zone_name
   type         = each.key
