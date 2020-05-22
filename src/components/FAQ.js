@@ -121,13 +121,12 @@ const FAQ = ({ accordionOnClick, strings }) => (
             )}
 >>>>>>> added all the changes needed
             <div
-                className="question"
+                className="question hidden"
                 data-collapsed={4}
                 onClick={e => accordionOnClick(e)}
                 onKeyDown={() => {}}
                 role="button"
                 tabIndex={0}
-                style={{ visibility: 'hidden' }}
             >
 <<<<<<< HEAD
 <<<<<<< HEAD

@@ -1,0 +1,19 @@
+#footer p {
+    font-family: 'Open Sans';
+    text-align: center;
+    color: #fff;
+    font-weight: 400;
+    max-width: 980px;
+    margin: auto auto 40px;
+    hr {
+        border: none;
+        border-bottom: 1px dotted #2f2f2f;
+        margin-top: 16px;
+    }
+    small {
+        display: block;
+        font-size: 12px;
+        margin-top: 15px;
+        color: #6f6f6f;
+    }
+}

@@ -8,6 +8,7 @@ import MangaFeature from './components/Slide01';
 import AppSupport from './components/Slide02';
 import Trial from './components/Trial';
 import FAQ from './components/FAQ';
+import Footer from './components/Footer';
 
 import { stringsLang } from './resources/translations';
 
@@ -128,9 +129,6 @@ class App extends React.Component {
             dataLang,
             lang,
         } = this.state;
-
-        console.log(lang);
-
         if (dataLang !== undefined) {
             return (
                 <StrictMode>
@@ -173,6 +171,7 @@ class App extends React.Component {
                         accordionSelection={accordionSelection}
                         accordionOnClick={this.accordionOnClick}
                     />
+                    <Footer />
                 </StrictMode>
             );
         } else {
