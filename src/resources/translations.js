@@ -26,9 +26,10 @@ export const stringsLang = lang => {
                     featureFour: '漫画家を直接応援可能',
                     featureFive: '毎週新作品をお届け',
                     featureSix: '広告なし',
-                    featureSeven: 'No more bad translations',
+                    featureSeven: '各言語対応',
                     priceFeature: 'たった5.99€/月で漫画読み放題',
-                    imageOneAltText: 'iPhones displaying the Animeshon.com app',
+                    imageOneAltText:
+                        'Animeshon.comのアプリを表示しているiPhone',
                 },
                 secondFeature: {
                     headline: 'スマホ、タブレット、パソコンでご利用可能',

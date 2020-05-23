@@ -2,9 +2,9 @@ import React from 'react';
 
 import './FAQ.scss';
 
-const FAQ = ({ accordionOnClick, strings }) => (
+const FAQ = ({ accordionOnClick, strings, lang }) => (
     <div className="manga-feature faq-feature">
-        <h2>{strings.headline}</h2>
+        <h2 className={lang === 'jp' ? 'italic' : ''}>{strings.headline}</h2>
         <div className="accordion">
             {strings.questionTwo && (
                 <div
