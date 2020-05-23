@@ -75,7 +75,7 @@ class App extends React.Component {
                     }
                 })
                 .catch(error => {
-                    console.log(error);
+                    throw new Error(error);
                 });
         } else {
             const msg = validate(this.state[e.target.id], lang);

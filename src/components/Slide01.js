@@ -9,15 +9,6 @@ const MangaFeature = ({ strings }) => (
         <h2>{strings.headline}</h2>
         <div className="content">
             <div className="texts">
-<<<<<<< HEAD
-<<<<<<< HEAD
-                <h4>{strings.featureOne}</h4>
-                <h4>{strings.featureTwo}</h4>
-                <h4>{strings.featureThree}</h4>
-                <h4>{strings.featureFour}</h4>
-                <hr />
-                <h3>{strings.priceFeature}</h3>
-=======
                 {strings.featureOne && <h4>{strings.featureOne}</h4>}
                 {strings.featureTwo && <h4>{strings.featureTwo}</h4>}
                 {strings.featureThree && <h4>{strings.featureThree}</h4>}
@@ -27,18 +18,6 @@ const MangaFeature = ({ strings }) => (
                 {strings.featureSeven && <h4>{strings.featureSeven}</h4>}
                 <hr />
                 {strings.priceFeature && <h3>{strings.priceFeature}</h3>}
->>>>>>> 8a99de9a1cb76cde78c7a6a895612bd5fcdfc6ab
-=======
-                {strings.featureOne && <h4>{strings.featureOne}</h4>}
-                {strings.featureTwo && <h4>{strings.featureTwo}</h4>}
-                {strings.featureThree && <h4>{strings.featureThree}</h4>}
-                {strings.featureFour && <h4>{strings.featureFour}</h4>}
-                {strings.featureFive && <h4>{strings.featureFive}</h4>}
-                {strings.featureSix && <h4>{strings.featureSix}</h4>}
-                {strings.featureSeven && <h4>{strings.featureSeven}</h4>}
-                <hr />
-                {strings.priceFeature && <h3>{strings.priceFeature}</h3>}
->>>>>>> added all the changes needed
             </div>
             <div className="phones">
                 <img src={Phones} alt={strings.imageOneAltText} />

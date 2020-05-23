@@ -8,14 +8,14 @@ export const stringsLang = lang => {
         case 'jp':
             return {
                 header: {
-                    headerTitle: '世界初イタリアデザインの漫画プラットフォーム',
+                    headerTitle: 'イタリア発の漫画プラットフォーム',
                     headerUnderline:
-                        '日本語や英語はもちろんその他の言語でも漫画をお読みいただけます。',
-                    headerFormPlaceholder: 'Eメール',
-                    headerFormButton: '登録',
-                    headerFormDisclaimer: `1ヶ月間無料お試し。
-                                           期間終了後は月5.99€。
-                                           クレジットカード登録不要。`,
+                        '日本語や英語はもちろんその他の言語でも漫画をお読みいただけま',
+                    headerFormPlaceholder: 'E-mail',
+                    headerFormButton: 'Join Now',
+                    headerFormDisclaimer: `1ヶ月間無料お試し
+                                           お試し期間終了後は月5.99€
+                                           クレジットカード登録不要`,
                 },
                 firstFeature: {
                     headline:
@@ -26,27 +26,27 @@ export const stringsLang = lang => {
                     featureFour: '漫画家を直接応援可能',
                     featureFive: '毎週新作品をお届け',
                     featureSix: '広告なし',
-                    featureSeven: '各言語対応',
+                    featureSeven: 'No more bad translations',
                     priceFeature: 'たった5.99€/月で漫画読み放題',
                     imageOneAltText: 'iPhones displaying the Animeshon.com app',
                 },
                 secondFeature: {
                     headline: 'スマホ、タブレット、パソコンでご利用可能',
-                    featureDeviceMobile: 'スマートフォン',
-                    featureDeviceTablet: 'タブレット',
-                    featureDeviceComputer: 'パソコン',
+                    featureDeviceMobile: 'Mobile',
+                    featureDeviceTablet: 'Tablet',
+                    featureDeviceComputer: 'Computer',
                     googlePlayAltText: 'Google Play',
                     appStoreAltText: 'Apple App Store',
-                    chromeAltText: 'Google Chrome ウェブブラウザ',
-                    firefoxAltText: 'Mozilla Firefox ブラウザ',
-                    edgeAltText: 'Microsoft Edge ブラウザ',
-                    safariAltText: 'Apple Safari ブラウザ',
+                    chromeAltText: 'Google Chrome Browser',
+                    firefoxAltText: 'Mozilla Firefox Browser',
+                    edgeAltText: 'Microsoft Edge Browser',
+                    safariAltText: 'Apple Safari Browser',
                 },
                 trialFeature: {
-                    headline: '無料登録で新しい漫画をお読みいただけます。',
-                    paragraph: '今までにない漫画の体験をしましょう！',
-                    trialFormPlaceholder: 'Eメール',
-                    trialFormButton: '登録',
+                    headline: '無料登録で、新しい漫画をお読みいただけます',
+                    paragraph: '今までにない漫画の体験をしましょう',
+                    trialFormPlaceholder: 'E-mail',
+                    trialFormButton: 'Join Now',
                 },
                 faq: {
                     headline: 'FAQ',
@@ -80,13 +80,9 @@ export const stringsLang = lang => {
                     headerUnderline: 'Read and watch anywhere in any language',
                     headerFormPlaceholder: 'E-mail',
                     headerFormButton: 'Join Now',
-<<<<<<< HEAD
-                    headerFormDisclaimer: `Start your 30 days of free trial. Subscription is only 5.99€/month. No credit card required.`,
-=======
                     headerFormDisclaimer: `Get free trial for a month
                                            When we start 5.99€ /month
                                            No credit card required`,
->>>>>>> added all the changes needed
                 },
                 firstFeature: {
                     headline: 'Better Manga Experience',
