@@ -1,10 +1,14 @@
-#footer p {
+#footer div {
     font-family: 'Open Sans';
     text-align: center;
     color: #fff;
     font-weight: 400;
     max-width: 980px;
+    width: calc(100% - 60px);
     margin: auto auto 40px;
+    @media screen and (max-width: 768px) {
+        font-size: 11px;
+    }
     hr {
         border: none;
         border-bottom: 1px dotted #2f2f2f;
@@ -15,5 +19,9 @@
         font-size: 12px;
         margin-top: 15px;
         color: #6f6f6f;
+        @media screen and (max-width: 768px) {
+            font-size: 11px;
+            line-height: 1.2;
+        }
     }
 }

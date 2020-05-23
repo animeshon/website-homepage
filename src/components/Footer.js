@@ -8,14 +8,17 @@ const Footer = () => {
 
     return (
         <footer id="footer">
-            <p>
-                Copyright &copy; {date} Animeshon S.r.l. All Rights Reserved.
+            <div>
+                <p>
+                    Copyright &copy; {date} Animeshon S.r.l. All Rights
+                    Reserved.
+                </p>
                 <hr />
                 <small>
                     VAT: IT03072020211 &bull; REA Number: BZ230175 &bull;
                     Chamber of Commerce of Bolzano &bull; Share Capital: 9000€
                 </small>
-            </p>
+            </div>
         </footer>
     );
 };

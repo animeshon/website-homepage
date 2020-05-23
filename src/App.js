@@ -27,9 +27,13 @@ class App extends React.Component {
     };
 
     componentDidMount() {
+        const lang = navigator.language.startsWith('jp')
+            ? navigator.language
+            : 'en';
+
         this.setState({
-            lang: navigator.language,
-            dataLang: stringsLang(navigator.language),
+            lang: lang,
+            dataLang: stringsLang(lang),
         });
     }
 
