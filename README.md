@@ -22,12 +22,12 @@ npm run prod
 
 ## Known issues
 
--   [ ] Improvements on the responsive design;
--   [ ] Improvement on the background image of the trial section (darker image);
--   [ ] Make sure to fix the mailchimp issues (2 forms in the same page, strange error messages);
+-   [x] Improvements on the responsive design;
+-   [x] Improvement on the background image of the trial section (darker image);
+-   [x] Make sure to fix the mailchimp issues (2 forms in the same page, strange error messages);
 -   [ ] Improve the animation of the accordion;
--   [ ] Footer with Company Name, VAT Number, etc.
+-   [x] Footer with Company Name, VAT Number, etc.
 -   [ ] Automatic detection of the language
--   [ ] Language selection
+-   [x] Language selection
 -   [x] Add Google Analytics
 -   [x] Add Google Optimize

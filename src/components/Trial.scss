@@ -2,12 +2,12 @@
     padding: 100px 0;
     background-image: url('../assets/trial-image.jpg');
     background-position: left center;
-    background-size: 102%;
     background-repeat: no-repeat;
+    background-size: cover;
     .paragraph {
         font-size: 22px;
         width: calc(100% - 40px);
-        max-width: 320px;
+        max-width: 980px;
         color: #fff;
         line-height: 1.5;
         font-weight: lighter;

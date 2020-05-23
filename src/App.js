@@ -8,6 +8,7 @@ import MangaFeature from './components/Slide01';
 import AppSupport from './components/Slide02';
 import Trial from './components/Trial';
 import FAQ from './components/FAQ';
+import Footer from './components/Footer';
 
 import { stringsLang } from './resources/translations';
 
@@ -26,9 +27,13 @@ class App extends React.Component {
     };
 
     componentDidMount() {
+        const lang = navigator.language.startsWith('jp')
+            ? navigator.language
+            : 'en';
+
         this.setState({
-            lang: navigator.language,
-            dataLang: stringsLang(navigator.language),
+            lang: lang,
+            dataLang: stringsLang(lang),
         });
     }
 
@@ -74,7 +79,7 @@ class App extends React.Component {
                     }
                 })
                 .catch(error => {
-                    console.log(error);
+                    throw new Error(error);
                 });
         } else {
             const msg = validate(this.state[e.target.id], lang);
@@ -128,7 +133,6 @@ class App extends React.Component {
             dataLang,
             lang,
         } = this.state;
-
         if (dataLang !== undefined) {
             return (
                 <StrictMode>
@@ -171,6 +175,7 @@ class App extends React.Component {
                         accordionSelection={accordionSelection}
                         accordionOnClick={this.accordionOnClick}
                     />
+                    <Footer />
                 </StrictMode>
             );
         } else {
