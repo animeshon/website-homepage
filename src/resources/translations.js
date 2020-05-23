@@ -8,14 +8,14 @@ export const stringsLang = lang => {
         case 'jp':
             return {
                 header: {
-                    headerTitle: 'イタリア発の漫画プラットフォーム',
+                    headerTitle: '世界初イタリアデザインの漫画プラットフォーム',
                     headerUnderline:
-                        '日本語や英語はもちろんその他の言語でも漫画をお読みいただけま',
-                    headerFormPlaceholder: 'E-mail',
-                    headerFormButton: 'Join Now',
-                    headerFormDisclaimer: `1ヶ月間無料お試し
-                                           お試し期間終了後は月5.99€
-                                           クレジットカード登録不要`,
+                        '日本語や英語はもちろんその他の言語でも漫画をお読みいただけます。',
+                    headerFormPlaceholder: 'Eメール',
+                    headerFormButton: '登録',
+                    headerFormDisclaimer: `1ヶ月間無料お試し。
+                    期間終了後は月5.99€。
+                    クレジットカード登録不要。`,
                 },
                 firstFeature: {
                     headline:
@@ -32,21 +32,21 @@ export const stringsLang = lang => {
                 },
                 secondFeature: {
                     headline: 'スマホ、タブレット、パソコンでご利用可能',
-                    featureDeviceMobile: 'Mobile',
-                    featureDeviceTablet: 'Tablet',
-                    featureDeviceComputer: 'Computer',
+                    featureDeviceMobile: 'スマートフォン',
+                    featureDeviceTablet: 'タブレット',
+                    featureDeviceComputer: 'パソコン',
                     googlePlayAltText: 'Google Play',
                     appStoreAltText: 'Apple App Store',
-                    chromeAltText: 'Google Chrome Browser',
-                    firefoxAltText: 'Mozilla Firefox Browser',
-                    edgeAltText: 'Microsoft Edge Browser',
-                    safariAltText: 'Apple Safari Browser',
+                    chromeAltText: 'Google Chrome ウェブブラウザ',
+                    firefoxAltText: 'Mozilla Firefox ブラウザ',
+                    edgeAltText: 'Microsoft Edge ブラウザ',
+                    safariAltText: 'Apple Safari ブラウザ',
                 },
                 trialFeature: {
-                    headline: '無料登録で、新しい漫画をお読みいただけます',
-                    paragraph: '今までにない漫画の体験をしましょう',
-                    trialFormPlaceholder: 'E-mail',
-                    trialFormButton: 'Join Now',
+                    headline: '無料登録で新しい漫画をお読みいただけます。',
+                    paragraph: '今までにない漫画の体験をしましょう！',
+                    trialFormPlaceholder: 'Eメール',
+                    trialFormButton: '登録',
                 },
                 faq: {
                     headline: 'FAQ',
