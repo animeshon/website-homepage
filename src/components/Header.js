@@ -13,11 +13,14 @@ const Header = ({
     valueHeaderError,
     valueHeaderSuccess,
     strings,
+    lang,
 }) => (
     <header className="header">
         <img className="brand" src={Brand} alt="Animeshon Logo" />
         <div className="subscription-box">
-            <h1>{strings.headerTitle}</h1>
+            <h1 className={lang === 'jp' ? 'italic' : ''}>
+                {strings.headerTitle}
+            </h1>
             <h2>{strings.headerUnderline}</h2>
             <SubscriptionForm
                 source="header"

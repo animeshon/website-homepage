@@ -12,9 +12,9 @@ import Safari from '../assets/safari-icon.png';
 
 import './Slide02.scss';
 
-const AppSupport = ({ strings }) => (
+const AppSupport = ({ lang, strings }) => (
     <div className="manga-feature devices-feature">
-        <h2>{strings.headline}</h2>
+        <h2 className={lang === 'jp' ? 'italic' : ''}>{strings.headline}</h2>
         <div className="content support">
             <div className="feature01">
                 <img src={Phone} alt={strings.mobileIcon} />

@@ -153,6 +153,7 @@ class App extends React.Component {
                         />
                     </div>
                     <Header
+                        lang={lang}
                         strings={dataLang.header || {}}
                         valueHeader={valueHeader}
                         valueHeaderError={valueHeaderError}
@@ -160,9 +161,16 @@ class App extends React.Component {
                         typeFunction={this.handleTypeEmail}
                         handleSubmit={this.handleSubmit}
                     />
-                    <MangaFeature strings={dataLang.firstFeature || {}} />
-                    <AppSupport strings={dataLang.secondFeature || {}} />
+                    <MangaFeature
+                        lang={lang}
+                        strings={dataLang.firstFeature || {}}
+                    />
+                    <AppSupport
+                        lang={lang}
+                        strings={dataLang.secondFeature || {}}
+                    />
                     <Trial
+                        lang={lang}
                         strings={dataLang.trialFeature || {}}
                         valueTrial={valueTrial}
                         valueTrialError={valueTrialError}
@@ -171,6 +179,7 @@ class App extends React.Component {
                         handleSubmit={this.handleSubmit}
                     />
                     <FAQ
+                        lang={lang}
                         strings={dataLang.faq || {}}
                         accordionSelection={accordionSelection}
                         accordionOnClick={this.accordionOnClick}
