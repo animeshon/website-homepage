@@ -24,4 +24,20 @@
             line-height: 1.2;
         }
     }
+    &.pp-tc ul {
+        list-style: none;
+        li {
+            padding: 5px;
+            font-size: 12px;
+            color: #fff;
+            display: inline-block;
+            a {
+                color: #fff;
+                text-decoration: none;
+                &:hover {
+                    color: #f0c808;
+                }
+            }
+        }
+    }
 }
