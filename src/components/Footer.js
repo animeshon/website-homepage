@@ -8,6 +8,39 @@ const Footer = () => {
 
     return (
         <footer id="footer">
+            <div className="pp-tc">
+                <ul>
+                    <li>
+                        <a
+                            rel="noopener noreferrer"
+                            href="https://www.iubenda.com/privacy-policy/48776658"
+                            target="_blank"
+                        >
+                            Privacy Policy
+                        </a>
+                    </li>
+                    <li>|</li>
+                    <li>
+                        <a
+                            rel="noopener noreferrer"
+                            href="https://www.iubenda.com/privacy-policy/48776658/cookie-policy"
+                            target="_blank"
+                        >
+                            Cookie Policy
+                        </a>
+                    </li>
+                    <li>|</li>
+                    <li>
+                        <a
+                            rel="noopener noreferrer"
+                            href="https://www.iubenda.com/terms-and-conditions/48776658"
+                            target="_blank"
+                        >
+                            Terms and Conditions
+                        </a>
+                    </li>
+                </ul>
+            </div>
             <div>
                 <p>
                     Copyright &copy; {date} Animeshon S.r.l. All Rights
