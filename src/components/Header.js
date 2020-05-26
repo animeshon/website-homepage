@@ -18,7 +18,7 @@ const Header = ({
     <header className="header">
         <img className="brand" src={Brand} alt="Animeshon Logo" />
         <div className="subscription-box">
-            <h1 className={lang === 'jp' ? 'italic' : ''}>
+            <h1 className={lang === 'ja' ? 'italic' : ''}>
                 {strings.headerTitle}
             </h1>
             <h2>{strings.headerUnderline}</h2>

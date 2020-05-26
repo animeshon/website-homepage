@@ -27,12 +27,14 @@ class App extends React.Component {
     };
 
     componentDidMount() {
-        const lang = navigator.language.startsWith('jp')
-            ? navigator.language
-            : 'en';
+        const isoLang = navigator.language;
+        const machine = navigator.platform;
+        const lang = navigator.language.startsWith('ja') ? 'ja' : 'en';
 
         this.setState({
-            lang: lang,
+            isoLang,
+            lang,
+            machine,
             dataLang: stringsLang(lang),
         });
     }
@@ -48,37 +50,107 @@ class App extends React.Component {
     handleSubmit = e => {
         e.preventDefault();
         e.persist();
-        const { lang } = this.state;
-        const requestBody = {
-            email_address: this.state[e.target.id],
+        const {
             lang,
+            isoLang,
+            machine,
+            dataLang: { emailResponses },
+        } = this.state;
+        const requestBody = {
+            email: this.state[e.target.id],
+            status: 'subscribed',
+            language: lang,
+            tags: [isoLang, machine],
+        };
+
+        const options = {
+            method: 'POST',
+            body: JSON.stringify(requestBody),
+            mode: 'cors',
+            headers: {
+                'Content-Type': 'application/json',
+            },
         };
 
         if (checkValidity(this.state[e.target.id]) === true) {
-            fetch('https://mailchimp-api.animeshon.com/addNew', {
-                method: 'POST',
-                body: JSON.stringify(requestBody),
-                mode: 'cors',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-            })
+            fetch('http://localhost:8080/api/v1/audience', options)
                 .then(res => {
                     return res.json();
                 })
                 .then(msg => {
-                    if (msg.status === 400) {
+                    console.log('msg =>', msg);
+                    if (
+                        msg.code === 500 &&
+                        msg.error === 'internal server error'
+                    ) {
                         this.setState({
-                            [`${e.target.id}Error`]: msg.message,
+                            [`${e.target.id}Error`]: emailResponses.internalServerError,
                         });
                     }
-                    if (msg.status === 200) {
+                    if (
+                        msg.code === 400 &&
+                        msg.error === 'email in compliance state'
+                    ) {
+                        requestBody.status = 'pending';
+
+                        fetch('http://localhost:8080/api/v1/audience', {
+                            method: 'POST',
+                            body: JSON.stringify(requestBody),
+                            mode: 'cors',
+                            headers: {
+                                'Content-Type': 'application/json',
+                            },
+                        })
+                            .then(res => res.json())
+                            .then(msg => {
+                                if (
+                                    msg.code === 400 &&
+                                    msg.error === 'invalid resource'
+                                ) {
+                                    this.setState({
+                                        [`${e.target.id}Error`]: emailResponses.invalidResource,
+                                    });
+                                }
+                            });
+                    }
+                    if (msg.code === 400 && msg.error === 'invalid resource') {
                         this.setState({
-                            [`${e.target.id}Success`]: msg.message,
+                            [`${e.target.id}Error`]: emailResponses.invalidResource,
+                        });
+                    }
+                    if (
+                        msg.code === 400 &&
+                        msg.error === 'invalid request audience'
+                    ) {
+                        this.setState({
+                            [`${e.target.id}Error`]: emailResponses.invalidRequestAudience,
+                        });
+                    }
+                    if (
+                        msg.code === 400 &&
+                        msg.error === 'origin not allowed'
+                    ) {
+                        this.setState({
+                            [`${e.target.id}Error`]: emailResponses.originNotAllowed,
+                        });
+                    }
+                    if (msg.code === 400 && msg.error === 'bad request') {
+                        this.setState({
+                            [`${e.target.id}Error`]: emailResponses.badRequest,
+                        });
+                    }
+                    if (msg.code === 204) {
+                        this.setState({
+                            [`${e.target.id}Error`]: emailResponses.successfulStatus,
                         });
                     }
                 })
                 .catch(error => {
+                    this.setState({
+                        [`${e.target.id}Error`]: emailResponses.badRequest,
+                    });
+                    console.log('error =>', error);
+
                     throw new Error(error);
                 });
         } else {
@@ -145,10 +217,10 @@ class App extends React.Component {
                             }`}
                         />
                         <span // eslint-disable-line
-                            data-lang="jp"
+                            data-lang="ja"
                             onClick={e => this.changeLanguage(e)}
                             className={`flags jp${
-                                lang.includes('jp') ? ' selected' : ''
+                                lang.includes('ja') ? ' selected' : ''
                             }`}
                         />
                     </div>

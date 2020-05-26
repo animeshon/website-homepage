@@ -6,7 +6,7 @@ import './Slide01.scss';
 
 const MangaFeature = ({ strings, lang }) => (
     <div className="manga-feature smartphones-feature">
-        <h2 className={lang === 'jp' ? 'italic' : ''}>{strings.headline}</h2>
+        <h2 className={lang === 'ja' ? 'italic' : ''}>{strings.headline}</h2>
         <div className="content">
             <div className="texts">
                 {strings.featureOne && <h4>{strings.featureOne}</h4>}

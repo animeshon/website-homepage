@@ -5,7 +5,7 @@ export const stringsLang = lang => {
         // JAPANESE
         // ------------------------
         // ------------------------
-        case 'jp':
+        case 'ja':
             return {
                 header: {
                     headerTitle: '世界初イタリアデザインの漫画プラットフォーム',
@@ -67,6 +67,20 @@ export const stringsLang = lang => {
                                     そこで、Animeshonはフェアトレード漫画を推進しています。`,
                     questionFour: '',
                     responseFour: ``,
+                },
+                emailResponses: {
+                    internalServerError:
+                        'JP-An error has occurred trying to process your request. Please refresh the page and try again.',
+                    badRequest:
+                        'JP-An error has occurred trying to process your request. Please refresh the page and try again.',
+                    originNotAllowed:
+                        'JP-An error has occurred trying to process your request. Please refresh the page and try again.',
+                    invalidRequestAudience:
+                        'JP-An error has occurred trying to process your request. Please refresh the page and try again.',
+                    invalidResource:
+                        'JP-The email address you provided is either invalid or suspicious. Please check the email address and try again.',
+                    successfulStatus:
+                        'JP-Thank for registering to Animeshon! You will receive a confirmation email soon.',
                 },
             };
         // ------------------------
@@ -137,6 +151,20 @@ export const stringsLang = lang => {
                                   sustainability, enabling Manga artists to improve their life.`,
                     questionFour: '',
                     responseFour: ``,
+                },
+                emailResponses: {
+                    internalServerError:
+                        'An error has occurred trying to process your request. Please refresh the page and try again.',
+                    badRequest:
+                        'An error has occurred trying to process your request. Please refresh the page and try again.',
+                    originNotAllowed:
+                        'An error has occurred trying to process your request. Please refresh the page and try again.',
+                    invalidRequestAudience:
+                        'An error has occurred trying to process your request. Please refresh the page and try again.',
+                    invalidResource:
+                        'The email address you provided is either invalid or suspicious. Please check the email address and try again.',
+                    successfulStatus:
+                        'Thank for registering to Animeshon! You will receive a confirmation email soon.',
                 },
             };
     }
