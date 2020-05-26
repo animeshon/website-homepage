@@ -74,74 +74,57 @@ class App extends React.Component {
 
         if (checkValidity(this.state[e.target.id]) === true) {
             fetch('http://localhost:8080/api/v1/audience', options)
-                .then(res => {
-                    return res.json();
-                })
+                .then(res => (res.status === 204 ? { code: 204 } : res.json()))
                 .then(msg => {
-                    console.log('msg =>', msg);
-                    if (
-                        msg.code === 500 &&
-                        msg.error === 'internal server error'
-                    ) {
+                    if (msg.code === 500) {
                         this.setState({
                             [`${e.target.id}Error`]: emailResponses.internalServerError,
                         });
-                    }
-                    if (
-                        msg.code === 400 &&
-                        msg.error === 'email in compliance state'
-                    ) {
-                        requestBody.status = 'pending';
+                    } else if (msg.code === 400) {
+                        if (msg.error === 'email in compliance state') {
+                            requestBody.status = 'pending';
 
-                        fetch('http://localhost:8080/api/v1/audience', {
-                            method: 'POST',
-                            body: JSON.stringify(requestBody),
-                            mode: 'cors',
-                            headers: {
-                                'Content-Type': 'application/json',
-                            },
-                        })
-                            .then(res => res.json())
-                            .then(msg => {
-                                if (
-                                    msg.code === 400 &&
-                                    msg.error === 'invalid resource'
-                                ) {
-                                    this.setState({
-                                        [`${e.target.id}Error`]: emailResponses.invalidResource,
-                                    });
-                                }
+                            fetch('http://localhost:8080/api/v1/audience', {
+                                method: 'POST',
+                                body: JSON.stringify(requestBody),
+                                mode: 'cors',
+                                headers: {
+                                    'Content-Type': 'application/json',
+                                },
+                            })
+                                .then(res =>
+                                    res.status === 204 ? {} : res.json()
+                                )
+                                .then(msg => {
+                                    if (
+                                        msg.code === 400 &&
+                                        msg.error === 'invalid resource'
+                                    ) {
+                                        this.setState({
+                                            [`${e.target.id}Error`]: emailResponses.invalidResource,
+                                        });
+                                    }
+                                })
+                                .catch(error => {
+                                    throw new Error(error);
+                                });
+                        } else if (msg.error === 'invalid resource') {
+                            this.setState({
+                                [`${e.target.id}Error`]: emailResponses.invalidResource,
                             });
-                    }
-                    if (msg.code === 400 && msg.error === 'invalid resource') {
+                        } else if (msg.error === 'already subscribed') {
+                            this.setState({
+                                [`${e.target.id}Error`]: emailResponses.alreadySubscribed,
+                            });
+                        } else {
+                            this.setState({
+                                [`${e.target.id}Error`]: emailResponses.badRequest,
+                            });
+                        }
+                    } else if (msg.code === 204) {
                         this.setState({
-                            [`${e.target.id}Error`]: emailResponses.invalidResource,
-                        });
-                    }
-                    if (
-                        msg.code === 400 &&
-                        msg.error === 'invalid request audience'
-                    ) {
-                        this.setState({
-                            [`${e.target.id}Error`]: emailResponses.invalidRequestAudience,
-                        });
-                    }
-                    if (
-                        msg.code === 400 &&
-                        msg.error === 'origin not allowed'
-                    ) {
-                        this.setState({
-                            [`${e.target.id}Error`]: emailResponses.originNotAllowed,
-                        });
-                    }
-                    if (msg.code === 400 && msg.error === 'bad request') {
-                        this.setState({
-                            [`${e.target.id}Error`]: emailResponses.badRequest,
-                        });
-                    }
-                    if (msg.code === 204) {
-                        this.setState({
-                            [`${e.target.id}Error`]: emailResponses.successfulStatus,
+                            [`${e.target.id}Error`]: '',
+                            [`${e.target.id}Success`]: emailResponses.successfulStatus,
                         });
                     }
                 })
@@ -149,8 +132,6 @@ class App extends React.Component {
                     this.setState({
                         [`${e.target.id}Error`]: emailResponses.badRequest,
                     });
-                    console.log('error =>', error);
-
                     throw new Error(error);
                 });
         } else {

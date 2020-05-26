@@ -1,4 +1,5 @@
 import React from 'react';
+import parse from 'html-react-parser';
 
 import SubscriptionForm from './SubscriptionForm';
 
@@ -34,10 +35,10 @@ const Header = ({
                 }}
             />
             {valueHeaderError === '' ? null : (
-                <p className="error">{valueHeaderError}</p>
+                <p className="error">{parse(valueHeaderError)}</p>
             )}
             {valueHeaderSuccess === '' ? null : (
-                <p className="success">{valueHeaderSuccess}</p>
+                <p className="success">{parse(valueHeaderSuccess)}</p>
             )}
             <p>{strings.headerFormDisclaimer}</p>
         </div>

@@ -73,12 +73,10 @@ export const stringsLang = lang => {
                         'JP-An error has occurred trying to process your request. Please refresh the page and try again.',
                     badRequest:
                         'JP-An error has occurred trying to process your request. Please refresh the page and try again.',
-                    originNotAllowed:
-                        'JP-An error has occurred trying to process your request. Please refresh the page and try again.',
-                    invalidRequestAudience:
-                        'JP-An error has occurred trying to process your request. Please refresh the page and try again.',
                     invalidResource:
                         'JP-The email address you provided is either invalid or suspicious. Please check the email address and try again.',
+                    alreadySubscribed:
+                        'JP-The email address you provided is already registered.',
                     successfulStatus:
                         'JP-Thank for registering to Animeshon! You will receive a confirmation email soon.',
                 },
@@ -157,14 +155,11 @@ export const stringsLang = lang => {
                         'An error has occurred trying to process your request. Please refresh the page and try again.',
                     badRequest:
                         'An error has occurred trying to process your request. Please refresh the page and try again.',
-                    originNotAllowed:
-                        'An error has occurred trying to process your request. Please refresh the page and try again.',
-                    invalidRequestAudience:
-                        'An error has occurred trying to process your request. Please refresh the page and try again.',
                     invalidResource:
-                        'The email address you provided is either invalid or suspicious. Please check the email address and try again.',
-                    successfulStatus:
-                        'Thank for registering to Animeshon! You will receive a confirmation email soon.',
+                        'The email address you provided is either invalid or suspicious.Please check the email address and try again.',
+                    alreadySubscribed:
+                        'The email address you provided is already registered.',
+                    successfulStatus: `Thank for registering to Animeshon! You will receive a confirmation email soon.`,
                 },
             };
     }
