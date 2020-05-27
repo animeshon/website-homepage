@@ -10,7 +10,6 @@ const SubscriptionForm = ({
     labels,
     error,
 }) => {
-    console.log(error);
     return (
         <div
             id="mc-signup"
