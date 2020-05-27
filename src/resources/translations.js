@@ -78,7 +78,7 @@ export const stringsLang = lang => {
                     alreadySubscribed:
                         'JP-The email address you provided is already registered.',
                     successfulStatus:
-                        'JP-Thank for registering to Animeshon! You will receive a confirmation email soon.',
+                        'JP-Thank you for registering to Animeshon! You will receive a confirmation email soon.',
                 },
             };
         // ------------------------
@@ -159,7 +159,7 @@ export const stringsLang = lang => {
                         'The email address you provided is either invalid or suspicious.Please check the email address and try again.',
                     alreadySubscribed:
                         'The email address you provided is already registered.',
-                    successfulStatus: `Thank for registering to Animeshon! You will receive a confirmation email soon.`,
+                    successfulStatus: `Thank you for registering to Animeshon! You will receive a confirmation email soon.`,
                 },
             };
     }
