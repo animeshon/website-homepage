@@ -156,7 +156,7 @@ export const stringsLang = lang => {
                     badRequest:
                         'An error has occurred trying to process your request. Please refresh the page and try again.',
                     invalidResource:
-                        'The email address you provided is either invalid or suspicious.Please check the email address and try again.',
+                        'The email address you provided is either invalid or suspicious. Please check the email address and try again.',
                     alreadySubscribed:
                         'The email address you provided is already registered.',
                     successfulStatus: `Thank you for registering to Animeshon! You will receive a confirmation email soon.`,
