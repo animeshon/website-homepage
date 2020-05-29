@@ -73,7 +73,7 @@ class App extends React.Component {
         };
 
         if (checkValidity(this.state[e.target.id]) === true) {
-            fetch('http://localhost:8080/api/v1/audience', options)
+            fetch('https://mailchimp-api.animeshon.com//api/v1/audience', options)
                 .then(res => (res.status === 204 ? { code: 204 } : res.json()))
                 .then(msg => {
                     if (msg.code === 500) {
@@ -84,7 +84,7 @@ class App extends React.Component {
                         if (msg.error === 'email in compliance state') {
                             requestBody.status = 'pending';
 
-                            fetch('http://localhost:8080/api/v1/audience', {
+                            fetch('https://mailchimp-api.animeshon.com//api/v1/audience', {
                                 method: 'POST',
                                 body: JSON.stringify(requestBody),
                                 mode: 'cors',
