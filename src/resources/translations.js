@@ -70,15 +70,15 @@ export const stringsLang = lang => {
                 },
                 emailResponses: {
                     internalServerError:
-                        'JP-An error has occurred trying to process your request. Please refresh the page and try again.',
+                        'リクエスト中にエラーが発生しました。ページを再読み込みし、もう一度お試しください。',
                     badRequest:
-                        'JP-An error has occurred trying to process your request. Please refresh the page and try again.',
+                        'リクエスト中にエラーが発生しました。ページを再読み込みし、もう一度お試しください。',
                     invalidResource:
-                        'JP-The email address you provided is either invalid or suspicious. Please check the email address and try again.',
+                        '入力されたメールアドレスは無効です。再度メールアドレスをご確認ください。',
                     alreadySubscribed:
-                        'JP-The email address you provided is already registered.',
+                        '入力されたメールアドレスはすでに登録されています。',
                     successfulStatus:
-                        'JP-Thank you for registering to Animeshon! You will receive a confirmation email soon.',
+                        'Animeshonにご登録頂きまして、ありがとうございました。まもなく確認メールが届きます。',
                 },
             };
         // ------------------------
@@ -131,7 +131,7 @@ export const stringsLang = lang => {
                 faq: {
                     headline: 'FAQ',
                     questionOne: 'What is Animeshon?',
-                    responseOne: `Animsheon is a platform where users can consume Manga produced by
+                    responseOne: `Animeshon is a platform where users can consume Manga produced by
                                   independent Japanese Manga artists. We build a bridge between users in the world
                                   and Manga artists in Japan and offer a place where both of them can support each
                                   other.`,
