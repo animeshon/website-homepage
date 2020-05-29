@@ -1,4 +1,5 @@
 import React from 'react';
+import parse from 'html-react-parser';
 
 import SubscriptionForm from './SubscriptionForm';
 
@@ -18,7 +19,7 @@ const Header = ({
     <header className="header">
         <img className="brand" src={Brand} alt="Animeshon Logo" />
         <div className="subscription-box">
-            <h1 className={lang === 'jp' ? 'italic' : ''}>
+            <h1 className={lang === 'ja' ? 'italic' : ''}>
                 {strings.headerTitle}
             </h1>
             <h2>{strings.headerUnderline}</h2>
@@ -34,10 +35,10 @@ const Header = ({
                 }}
             />
             {valueHeaderError === '' ? null : (
-                <p className="error">{valueHeaderError}</p>
+                <p className="error">{parse(valueHeaderError)}</p>
             )}
             {valueHeaderSuccess === '' ? null : (
-                <p className="success">{valueHeaderSuccess}</p>
+                <p className="success">{parse(valueHeaderSuccess)}</p>
             )}
             <p>{strings.headerFormDisclaimer}</p>
         </div>

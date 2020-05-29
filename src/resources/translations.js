@@ -5,7 +5,7 @@ export const stringsLang = lang => {
         // JAPANESE
         // ------------------------
         // ------------------------
-        case 'jp':
+        case 'ja':
             return {
                 header: {
                     headerTitle: '世界初イタリアデザインの漫画プラットフォーム',
@@ -68,6 +68,18 @@ export const stringsLang = lang => {
                     questionFour: '',
                     responseFour: ``,
                 },
+                emailResponses: {
+                    internalServerError:
+                        'リクエスト中にエラーが発生しました。ページを再読み込みし、もう一度お試しください。',
+                    badRequest:
+                        'リクエスト中にエラーが発生しました。ページを再読み込みし、もう一度お試しください。',
+                    invalidResource:
+                        '入力されたメールアドレスは無効です。再度メールアドレスをご確認ください。',
+                    alreadySubscribed:
+                        '入力されたメールアドレスはすでに登録されています。',
+                    successfulStatus:
+                        'Animeshonにご登録頂きまして、ありがとうございました。まもなく確認メールが届きます。',
+                },
             };
         // ------------------------
         // ------------------------
@@ -119,7 +131,7 @@ export const stringsLang = lang => {
                 faq: {
                     headline: 'FAQ',
                     questionOne: 'What is Animeshon?',
-                    responseOne: `Animsheon is a platform where users can consume Manga produced by
+                    responseOne: `Animeshon is a platform where users can consume Manga produced by
                                   independent Japanese Manga artists. We build a bridge between users in the world
                                   and Manga artists in Japan and offer a place where both of them can support each
                                   other.`,
@@ -137,6 +149,17 @@ export const stringsLang = lang => {
                                   sustainability, enabling Manga artists to improve their life.`,
                     questionFour: '',
                     responseFour: ``,
+                },
+                emailResponses: {
+                    internalServerError:
+                        'An error has occurred trying to process your request. Please refresh the page and try again.',
+                    badRequest:
+                        'An error has occurred trying to process your request. Please refresh the page and try again.',
+                    invalidResource:
+                        'The email address you provided is either invalid or suspicious.Please check the email address and try again.',
+                    alreadySubscribed:
+                        'The email address you provided is already registered.',
+                    successfulStatus: `Thank you for registering to Animeshon! You will receive a confirmation email soon.`,
                 },
             };
     }

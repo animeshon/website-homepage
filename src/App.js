@@ -27,12 +27,14 @@ class App extends React.Component {
     };
 
     componentDidMount() {
-        const lang = navigator.language.startsWith('jp')
-            ? navigator.language
-            : 'en';
+        const isoLang = navigator.language;
+        const machine = navigator.platform;
+        const lang = navigator.language.startsWith('ja') ? 'ja' : 'en';
 
         this.setState({
-            lang: lang,
+            isoLang,
+            lang,
+            machine,
             dataLang: stringsLang(lang),
         });
     }
@@ -48,37 +50,88 @@ class App extends React.Component {
     handleSubmit = e => {
         e.preventDefault();
         e.persist();
-        const { lang } = this.state;
-        const requestBody = {
-            email_address: this.state[e.target.id],
+        const {
             lang,
+            isoLang,
+            machine,
+            dataLang: { emailResponses },
+        } = this.state;
+        const requestBody = {
+            email: this.state[e.target.id],
+            status: 'subscribed',
+            language: lang,
+            tags: [isoLang, machine],
+        };
+
+        const options = {
+            method: 'POST',
+            body: JSON.stringify(requestBody),
+            mode: 'cors',
+            headers: {
+                'Content-Type': 'application/json',
+            },
         };
 
         if (checkValidity(this.state[e.target.id]) === true) {
-            fetch('https://mailchimp-api.animeshon.com/addNew', {
-                method: 'POST',
-                body: JSON.stringify(requestBody),
-                mode: 'cors',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-            })
-                .then(res => {
-                    return res.json();
-                })
+            fetch('http://localhost:8080/api/v1/audience', options)
+                .then(res => (res.status === 204 ? { code: 204 } : res.json()))
                 .then(msg => {
-                    if (msg.status === 400) {
+                    if (msg.code === 500) {
                         this.setState({
-                            [`${e.target.id}Error`]: msg.message,
+                            [`${e.target.id}Error`]: emailResponses.internalServerError,
                         });
-                    }
-                    if (msg.status === 200) {
+                    } else if (msg.code === 400) {
+                        if (msg.error === 'email in compliance state') {
+                            requestBody.status = 'pending';
+
+                            fetch('http://localhost:8080/api/v1/audience', {
+                                method: 'POST',
+                                body: JSON.stringify(requestBody),
+                                mode: 'cors',
+                                headers: {
+                                    'Content-Type': 'application/json',
+                                },
+                            })
+                                .then(res =>
+                                    res.status === 204 ? {} : res.json()
+                                )
+                                .then(msg => {
+                                    if (
+                                        msg.code === 400 &&
+                                        msg.error === 'invalid resource'
+                                    ) {
+                                        this.setState({
+                                            [`${e.target.id}Error`]: emailResponses.invalidResource,
+                                        });
+                                    }
+                                })
+                                .catch(error => {
+                                    throw new Error(error);
+                                });
+                        } else if (msg.error === 'invalid resource') {
+                            this.setState({
+                                [`${e.target.id}Error`]: emailResponses.invalidResource,
+                            });
+                        } else if (msg.error === 'already subscribed') {
+                            this.setState({
+                                [`${e.target.id}Error`]: emailResponses.alreadySubscribed,
+                            });
+                        } else {
+                            this.setState({
+                                [`${e.target.id}Error`]: emailResponses.badRequest,
+                            });
+                        }
+                    } else if (msg.code === 204) {
                         this.setState({
-                            [`${e.target.id}Success`]: msg.message,
+                            [`${e.target.id}Error`]: '',
+                            [`${e.target.id}Success`]: emailResponses.successfulStatus,
                         });
                     }
                 })
                 .catch(error => {
+                    this.setState({
+                        [`${e.target.id}Error`]: emailResponses.badRequest,
+                    });
                     throw new Error(error);
                 });
         } else {
@@ -145,10 +198,10 @@ class App extends React.Component {
                             }`}
                         />
                         <span // eslint-disable-line
-                            data-lang="jp"
+                            data-lang="ja"
                             onClick={e => this.changeLanguage(e)}
                             className={`flags jp${
-                                lang.includes('jp') ? ' selected' : ''
+                                lang.includes('ja') ? ' selected' : ''
                             }`}
                         />
                     </div>

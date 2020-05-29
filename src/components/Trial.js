@@ -14,7 +14,7 @@ const Trial = ({
     lang,
 }) => (
     <div className="manga-feature trial-feature">
-        <h2 className={lang === 'jp' ? 'italic' : ''}>{strings.headline}</h2>
+        <h2 className={lang === 'ja' ? 'italic' : ''}>{strings.headline}</h2>
         {strings.paragraph && <p className="paragraph">{strings.paragraph}</p>}
         <SubscriptionForm
             value={valueTrial}
