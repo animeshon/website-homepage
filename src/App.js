@@ -81,7 +81,7 @@ class App extends React.Component {
                             [`${e.target.id}Error`]: emailResponses.internalServerError,
                         });
                     } else if (msg.code === 400) {
-                        if (msg.error === 'email in compliance state' || msg.error === 'forgotten email not subscribed') {
+                        if (msg.error === 'email in compliance state') {
                             requestBody.status = 'pending';
 
                             fetch('https://mailchimp-api.animeshon.com/api/v1/audience', {
@@ -108,7 +108,7 @@ class App extends React.Component {
                                 .catch(error => {
                                     throw new Error(error);
                                 });
-                        } else if (msg.error === 'invalid resource') {
+                        } else if (msg.error === 'invalid resource' || msg.error === 'forgotten email not subscribed') {
                             this.setState({
                                 [`${e.target.id}Error`]: emailResponses.invalidResource,
                             });
