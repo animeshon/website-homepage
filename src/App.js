@@ -1,5 +1,6 @@
 import React, { StrictMode } from 'react';
 import { render } from 'react-dom';
+import { navigate } from '@reach/router';
 
 import { validate, checkValidity } from './resources/validation';
 
@@ -31,12 +32,17 @@ class App extends React.Component {
         const machine = navigator.platform;
         const lang = navigator.language.startsWith('ja') ? 'ja' : 'en';
 
-        this.setState({
-            isoLang,
-            lang,
-            machine,
-            dataLang: stringsLang(lang),
-        });
+        this.setState(
+            {
+                isoLang,
+                lang,
+                machine,
+                dataLang: stringsLang(lang),
+            },
+            () => {
+                navigate(`?hl=${lang === 'en' ? 'en-US' : 'ja-JP'}`);
+            }
+        );
     }
 
     handleTypeEmail = e => {
@@ -73,7 +79,10 @@ class App extends React.Component {
         };
 
         if (checkValidity(this.state[e.target.id]) === true) {
-            fetch('https://mailchimp-api.animeshon.com/api/v1/audience', options)
+            fetch(
+                'https://mailchimp-api.animeshon.com/api/v1/audience',
+                options
+            )
                 .then(res => (res.status === 204 ? { code: 204 } : res.json()))
                 .then(msg => {
                     if (msg.code === 500) {
@@ -84,14 +93,17 @@ class App extends React.Component {
                         if (msg.error === 'email in compliance state') {
                             requestBody.status = 'pending';
 
-                            fetch('https://mailchimp-api.animeshon.com/api/v1/audience', {
-                                method: 'POST',
-                                body: JSON.stringify(requestBody),
-                                mode: 'cors',
-                                headers: {
-                                    'Content-Type': 'application/json',
-                                },
-                            })
+                            fetch(
+                                'https://mailchimp-api.animeshon.com/api/v1/audience',
+                                {
+                                    method: 'POST',
+                                    body: JSON.stringify(requestBody),
+                                    mode: 'cors',
+                                    headers: {
+                                        'Content-Type': 'application/json',
+                                    },
+                                }
+                            )
                                 .then(res =>
                                     res.status === 204 ? {} : res.json()
                                 )
@@ -108,7 +120,10 @@ class App extends React.Component {
                                 .catch(error => {
                                     throw new Error(error);
                                 });
-                        } else if (msg.error === 'invalid resource' || msg.error === 'forgotten email not subscribed') {
+                        } else if (
+                            msg.error === 'invalid resource' ||
+                            msg.error === 'forgotten email not subscribed'
+                        ) {
                             this.setState({
                                 [`${e.target.id}Error`]: emailResponses.invalidResource,
                             });
@@ -168,10 +183,15 @@ class App extends React.Component {
     changeLanguage = e => {
         const lang = e.target.dataset.lang;
 
-        this.setState({
-            lang,
-            dataLang: stringsLang(lang),
-        });
+        this.setState(
+            {
+                lang,
+                dataLang: stringsLang(lang),
+            },
+            () => {
+                navigate(`?hl=${lang === 'en' ? 'en-US' : 'ja-JP'}`);
+            }
+        );
     };
 
     render() {
