@@ -51,23 +51,22 @@ const FAQ = ({ accordionOnClick, strings, lang }) => (
                     </div>
                 </div>
             )}
-            <div
-                className="question hidden"
-                data-collapsed={4}
-                onClick={e => accordionOnClick(e)}
-                onKeyDown={() => {}}
-                role="button"
-                tabIndex={0}
-            >
-                {strings.questionFour && [
-                    <p key={1} data-collapsed={4}>
-                        {strings.questionFour}
-                    </p>,
-                    <div key={2} data-collapsed={4} className="contents">
+
+            {strings.questionFour && (
+                <div
+                    className="question"
+                    data-collapsed={4}
+                    onClick={e => accordionOnClick(e)}
+                    onKeyDown={() => {}}
+                    role="button"
+                    tabIndex={0}
+                >
+                    <p data-collapsed={4}>{strings.questionFour}</p>
+                    <div data-collapsed={4} className="contents">
                         <p>{strings.responseFour}</p>
-                    </div>,
-                ]}
-            </div>
+                    </div>
+                </div>
+            )}
         </div>
     </div>
 );

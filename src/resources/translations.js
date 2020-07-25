@@ -65,8 +65,9 @@ export const stringsLang = lang => {
                                     海賊版が横行しています。このままでは、
                                     海賊版サイトに日本の漫画産業が潰されてしまいます。
                                     そこで、Animeshonはフェアトレード漫画を推進しています。`,
-                    questionFour: '',
-                    responseFour: ``,
+                    questionFour: 'Animeshonの理念は何ですか？',
+                    responseFour: `Animeshonは、アニメ・漫画・ライトノベルのファンとクリエーターが支え合い、交流できるコミュニティーを提供します。
+                                    また、ストーリー作りに貢献できるコミュニティーを作り、情熱と笑いと涙を分かち合える環境を目指します。`,
                 },
                 emailResponses: {
                     internalServerError:
@@ -147,8 +148,10 @@ export const stringsLang = lang => {
                                   we provide fairtrade Manga. Fairtrade Manga is Manga made under fair 
                                   distribution terms, decent working conditions, fair revenue share, and 
                                   sustainability, enabling Manga artists to improve their life.`,
-                    questionFour: '',
-                    responseFour: ``,
+                    questionFour: 'What are Animeshon\'s ideals?',
+                    responseFour: `We believe in the boundary between people which cry, laugh and love the wonderfull stories of the Anime & Manga culture.
+                                    We believe in an community where people which share this boundary support and interact with each other, creating new stories.
+                                    The anime, manga, and light novel communities still have much potential to grow, and we at Animeshon will work as hard as possible to provide the optimal environment for the prosperity of these communities.`,
                 },
                 emailResponses: {
                     internalServerError:
