@@ -15,9 +15,10 @@ steps:
   build:
     title: "Building Docker Image"
     type: "build"
-    image_name: "animeshon/homepage"
+    image_name: "homepage"
     tag: "${{CF_BRANCH_TAG_NORMALIZED}}"
     dockerfile: "Dockerfile"
+    registry: "eu-general-tier-0"
     working_directory: "${{clone}}"
     stage: "build"
   parallel_push:
