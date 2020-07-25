@@ -10,6 +10,7 @@ import AppSupport from './components/Slide02';
 import Trial from './components/Trial';
 import FAQ from './components/FAQ';
 import Footer from './components/Footer';
+import queryString from 'query-string';
 
 import { stringsLang } from './resources/translations';
 
@@ -28,10 +29,10 @@ class App extends React.Component {
     };
 
     componentDidMount() {
+        let presetLang = queryString.parse(window.location.search).hl
         const isoLang = navigator.language;
         const machine = navigator.platform;
-        const lang = navigator.language.startsWith('ja') ? 'ja' : 'en';
-
+        const lang = presetLang ? (presetLang.startsWith('ja') ? 'ja' : 'en') : (navigator.language.startsWith('ja') ? 'ja' : 'en');
         this.setState(
             {
                 isoLang,
