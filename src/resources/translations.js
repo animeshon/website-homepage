@@ -94,9 +94,9 @@ export const stringsLang = lang => {
                     headerUnderline: 'Read and watch anywhere in any language',
                     headerFormPlaceholder: 'E-mail',
                     headerFormButton: 'Join Now',
-                    headerFormDisclaimer: `Get free trial for a month
-                                           When we start 5.99€ /month
-                                           No credit card required`,
+                    headerFormDisclaimer: `One free month of trial.
+                                           No credit card required.
+                                           Monthly cost of 5.99€.`,
                 },
                 firstFeature: {
                     headline: 'Better Manga Experience',
