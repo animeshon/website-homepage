@@ -17,26 +17,6 @@
         .additionalinfo {
             max-width: 720px;
             margin-bottom: 30px;
-
-            .keywords {
-                font-size: 26px;
-                color: #121212;
-                font-weight: bold;
-            }
-            .description {
-                font-size: 26px;
-                color: #242424;
-            }
-        }
-        h2 {
-            margin-bottom: 60px;
-            max-width: 980px;
-            font-family: 'komika_displayregular';
-            color: #121212;
-            font-size: 42px;
-            font-weight: 100;
-            text-transform: uppercase;
-            letter-spacing: 0.02em;
         }
         h3 {
             //font-family: 'komika_displayregular';
@@ -77,28 +57,8 @@
     @media screen and (max-width: 920px) {
         .content {
             flex-direction: column;
-            .additionalinfo {
-                .keywords {
-                    font-size: 22px;
-                }
-                .description {
-                    font-size: 22px;
-                }
-            }
             h3 {
                 width: calc(100% - 60px);
-            }
-        }
-    }
-    @media screen and (max-width: 550px) {
-        .content {
-            .additionalinfo {
-                .keywords {
-                    font-size: 18px;
-                }
-                .description {
-                    font-size: 18px;
-                }
             }
         }
     }

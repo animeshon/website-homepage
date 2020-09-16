@@ -1,7 +1,9 @@
 import React from 'react';
 import Lottie from 'react-lottie';
+import classNames from 'classnames';
 
 import './Slide01.scss';
+import '../styles/global.scss';
 
 function Slide01 ({ strings, lang }) {
     const SubSlides = strings.subslides.map(function (el) {
@@ -10,10 +12,10 @@ function Slide01 ({ strings, lang }) {
         })
         return(
             <div className="subslide">
-                <div className="keywords">
+                <div className="keywords responsive--texts important-light">
                     {keyWords}
                 </div>
-                <div className="description">
+                <div className="description responsive--texts light">
                     {el.description}
                 </div>
             </div>
@@ -31,9 +33,9 @@ function Slide01 ({ strings, lang }) {
     }
 
     return (
-        <div className="overview-feature smartphones-feature">
-            <h2 className={lang === 'ja' ? 'italic' : ''}>{strings.headline}</h2>
+        <div className="overview-feature smartphones-feature">  
             <div className="content">
+                <h2 className={classNames("h2--komika", "important-light", {"italic": lang === 'ja'})}>{strings.headline}</h2>
                 <div className="lottie">
                     <Lottie  
                         options={lottieOption}

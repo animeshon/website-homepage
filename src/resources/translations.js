@@ -18,7 +18,7 @@ export const stringsLang = lang => {
             return {
                 header: {
                     headerTitle: 'The most complete and accessible Japanese Multimedia Ecosystem',
-                    headerUnderline: 'All the Anime, Manga, Doujinshi, Light Novels, Visual Novels, Games in one place',
+                    headerUnderline: 'All the Anime, Manga, Doujinshi, Light Novels, Visual Novels, Games & more in one single place',
                     headerFormPlaceholder: 'E-mail',
                     headerFormButton: 'Join Now',
                     headerFormDisclaimer: `Get free trial for a month
@@ -26,7 +26,7 @@ export const stringsLang = lang => {
                                            No credit card required`,
                 },
                 firstSlide: {
-                    headline: 'The project the Community needs and the project the Community deserves',
+                    headline: 'The project the Community needs, the project the Community deserves',
                     subslides: [
                         {
                             keywords: ["Discover", "Organize", "Rate", "Discuss"],
@@ -54,7 +54,7 @@ export const stringsLang = lang => {
                 },
                 devSlide: {
                     headline: "Unleash the potential of infinte ideas",
-                    subline: "Powerfull and easy to use interfaces and SDKs to exploit Animeshon and realize your idea",
+                    subline: "Powerful and easy to use interfaces and SDKs to exploit Animeshon and realize your idea",
                     additional: [
                         {
                             title: "Complete and comprehensive Documentation.",
@@ -64,7 +64,12 @@ export const stringsLang = lang => {
                             title: "Foundation Tool-Set in constant evolution.",
                             description: " The set of tools provided to the dev-community is in constant evolution to provide better, more usable and more performant services."
                         }
-                    ]
+                    ],
+                    doc: {
+                        link: "https://docs.animeshon.com/",
+                        aria: "documentation link",
+                        span: "Learn More"
+                    }
                 },
                 contactsSlide: {
                     headline: "Enter the Isekai Portal",
@@ -72,7 +77,7 @@ export const stringsLang = lang => {
                         {
                             title: "Discourse Forum",
                             description: "Be part of the dev-community andl help Animeshon to provide better service. Together we are invincible.",
-                            link: "www.google.it",
+                            link: "https://discuss.animeshon.com/",
                             aria: "discourse link",
                             span: "Learn More"
                             
@@ -80,15 +85,15 @@ export const stringsLang = lang => {
                         {
                             title: "Reddit",
                             description: "Ask, Discuss and leave feedbacks about Animeshon's mission and ideals. We hear you!",
-                            link: "www.google.it",
+                            link: "https://www.reddit.com/r/animeshon/",
                             aria: "Reddit link",
                             span: "Learn More"
                         },
                         {
-                            title: "Official Twiter",
+                            title: "Official Twitter",
                             description: "Don't miss any official update about the project.",
-                            link: "www.google.it",
-                            aria: "Twiter link",
+                            link: "https://twitter.com/AnimeshonSNS",
+                            aria: "Twitter link",
                             span: "Learn More"
                         }
                     ]

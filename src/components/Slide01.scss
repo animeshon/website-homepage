@@ -7,7 +7,7 @@
     flex-direction: column;
 
     .content {
-        max-width: 1280px;
+        max-width: 1080px;
         width: calc(100% - 60px);
         min-height: 10px;
         align-self: center;
@@ -33,17 +33,12 @@
                 .keywords {
                     text-align: center;
                     line-height: 1.5;
-                    font-size: 26px;
-                    color: #fff;
                     min-width: 200px;
                     align-self: center;
-                    font-weight: bold;
                 }
                 .description {
                     text-align: center;
                     line-height: 1.5;
-                    font-size: 26px;
-                    color: rgb(187, 185, 185);
                     min-width: 420px;
                     align-self: center;
                 }
@@ -53,19 +48,6 @@
             float: left;
             max-width: 30%;
         }
-    }
-    h2 {
-        margin-bottom: 60px;
-        align-self: center;
-        max-width: 980px;
-        width: calc(100% - 40px);
-        text-align: center;
-        font-family: 'komika_displayregular';
-        color: #fff;
-        font-size: 30px;
-        font-weight: 100;
-        text-transform: uppercase;
-        letter-spacing: 0.02em;
     }
 }
 
@@ -82,11 +64,9 @@
                     display: block;
                     .keywords {
                         min-width: initial;
-                        font-size: 22px;
                     }
                     .description {
                         min-width: initial;
-                        font-size: 22px;
                     }
                 }
             }
@@ -95,20 +75,6 @@
                 float: unset;
                 div {
                     max-width: 360px;
-                }
-            }
-        }
-    }
-    @media screen and (max-width: 550px) {
-        .content {
-            .subslides {
-                .subslide {
-                    .keywords {
-                        font-size: 18px;
-                    }
-                    .description {
-                        font-size: 18px;
-                    }
                 }
             }
         }
