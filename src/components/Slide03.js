@@ -2,9 +2,9 @@ import React from 'react';
 
 import Lottie from 'react-lottie';
 
-import './Slide02.scss';
+import './Slide03.scss';
 
-function Slide02 ({ strings, lang }) {
+function Slide03 ({ strings, lang }) {
     const AdditionalInformations = strings.additional.map(function (el) {
         return(
             <div className="additionalinfo">
@@ -21,7 +21,7 @@ function Slide02 ({ strings, lang }) {
     const lottieOption = {
         loop: true,
         autoplay: true,
-        animationData: require('../assets/lotties/lf30_editor_Poez3y.json'),
+        animationData: require('../assets/lotties/lf30_editor_ymNLXC.json'),
         rendererSettings: {
           //hideOnTransparent:true,
           preserveAspectRatio: "YMidxMid meet"
@@ -29,7 +29,7 @@ function Slide02 ({ strings, lang }) {
     }
 
     return (
-    <div className="user-feature smartphones-feature ipad-feature">
+    <div className="dev-feature smartphones-feature ipad-feature">
         <div className="content">
             <h2 className={lang === 'ja' ? 'italic' : ''}>{strings.headline}</h2>
             <h3>{strings.subline}</h3>
@@ -46,4 +46,4 @@ function Slide02 ({ strings, lang }) {
     )
 }
 
-export default Slide02;
+export default Slide03;

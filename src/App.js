@@ -5,9 +5,10 @@ import { navigate } from '@reach/router';
 import { validate, checkValidity } from './resources/validation';
 
 import Header from './components/Header';
-import MangaFeature from './components/Slide01';
-import AppSupport from './components/Slide02';
-import Trial from './components/Trial';
+import Slide01 from './components/Slide01';
+import Slide02 from './components/Slide02';
+import Slide03 from './components/Slide03';
+import Slide04 from './components/Slide04';
 import FAQ from './components/FAQ';
 import Footer from './components/Footer';
 import queryString from 'query-string';
@@ -235,22 +236,21 @@ class App extends React.Component {
                         typeFunction={this.handleTypeEmail}
                         handleSubmit={this.handleSubmit}
                     />
-                    <MangaFeature
+                    <Slide01
                         lang={lang}
-                        strings={dataLang.firstFeature || {}}
+                        strings={dataLang.firstSlide || {}}
                     />
-                    <AppSupport
+                    <Slide02
                         lang={lang}
-                        strings={dataLang.secondFeature || {}}
+                        strings={dataLang.userSlide || {}}
                     />
-                    <Trial
+                    <Slide03
                         lang={lang}
-                        strings={dataLang.trialFeature || {}}
-                        valueTrial={valueTrial}
-                        valueTrialError={valueTrialError}
-                        valueTrialSuccess={valueTrialSuccess}
-                        typeFunction={this.handleTypeEmail}
-                        handleSubmit={this.handleSubmit}
+                        strings={dataLang.devSlide || {}}
+                    />
+                    <Slide04
+                        lang={lang}
+                        strings={dataLang.contactsSlide || {}}
                     />
                     <FAQ
                         lang={lang}

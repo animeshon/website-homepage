@@ -2,65 +2,33 @@ import React from 'react';
 
 import './FAQ.scss';
 
-const FAQ = ({ accordionOnClick, strings, lang }) => (
-    <div className="manga-feature faq-feature">
-        <h2 className={lang === 'ja' ? 'italic' : ''}>{strings.headline}</h2>
-        <div className="accordion">
+function FAQ ({ accordionOnClick, strings, lang }) {
+    const faqs = strings.questions.map(function (el, index) {
+        return(
             <div
                 className="question"
-                data-collapsed={1}
+                data-collapsed={index}
                 onClick={e => accordionOnClick(e)}
                 onKeyDown={() => {}}
                 role="button"
                 tabIndex={0}
             >
-                <p data-collapsed={1}>{strings.questionOne}</p>
-                <div data-collapsed={1} className="contents">
-                    <p>{strings.responseOne}</p>
+                <p data-collapsed={index}>{el.question}</p>
+                <div data-collapsed={index} className="contents">
+                    <p>{el.answer}</p>
                 </div>
             </div>
-            <div
-                className="question"
-                data-collapsed={2}
-                onClick={e => accordionOnClick(e)}
-                onKeyDown={() => {}}
-                role="button"
-                tabIndex={0}
-            >
-                <p data-collapsed={2}>{strings.questionTwo}</p>
-                <div data-collapsed={2} className="contents">
-                    <p>{strings.responseTwo}</p>
-                </div>
-            </div>
-            <div
-                className="question"
-                data-collapsed={3}
-                onClick={e => accordionOnClick(e)}
-                onKeyDown={() => {}}
-                role="button"
-                tabIndex={0}
-            >
-                <p data-collapsed={3}>{strings.questionThree}</p>
-                <div data-collapsed={3} className="contents">
-                    <p>{strings.responseThree}</p>
-                </div>
-            </div>
+        )
+    })
 
-            <div
-                className="question"
-                data-collapsed={4}
-                onClick={e => accordionOnClick(e)}
-                onKeyDown={() => {}}
-                role="button"
-                tabIndex={0}
-            >
-                <p data-collapsed={4}>{strings.questionFour}</p>
-                <div data-collapsed={4} className="contents">
-                    <p>{strings.responseFour}</p>
-                </div>
+    return (
+        <div className="manga-feature faq-feature">
+            <h2 className={lang === 'ja' ? 'italic' : ''}>{strings.headline}</h2>
+            <div className="accordion">
+                {faqs}
             </div>
         </div>
-    </div>
-);
+    )
+}
 
 export default FAQ;

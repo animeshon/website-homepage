@@ -1,5 +1,5 @@
-.user-feature {
-    background-color: rgb(235, 235, 235);
+.dev-feature {
+    background-color: #121212;
     padding: 60px 0;
     display: flex;
     justify-content: center;
@@ -13,35 +13,38 @@
         min-height: 10px;
         align-self: center;
         flex-direction: row;
+        //text-align: right;
 
         .additionalinfo {
-            max-width: 720px;
+            //max-width: 720px;
             margin-bottom: 30px;
+            padding-left: calc(100% - 720px);
 
             .keywords {
                 font-size: 26px;
-                color: #121212;
+                color: #fff;
                 font-weight: bold;
             }
             .description {
                 font-size: 26px;
-                color: #242424;
+                color: rgb(194, 194, 194);
             }
         }
         h2 {
             margin-bottom: 60px;
             max-width: 980px;
             font-family: 'komika_displayregular';
-            color: #121212;
+            color: #fff;
             font-size: 42px;
             font-weight: 100;
             text-transform: uppercase;
             letter-spacing: 0.02em;
         }
         h3 {
+            padding-left: calc(30% + 30px);
             //font-family: 'komika_displayregular';
-            width: calc(70% - 60px);
-            color: #121212;
+            //width: calc(70% - 60px);
+            color: #fff;
             font-size: 30px;
             font-weight: 100;
             //text-transform: uppercase;
@@ -49,11 +52,12 @@
             font-weight: bold;
         }
         .lottie {
-            float: right;
+            float: left;
             position: relative;
             top: -150px;
-            right: -100px;
+            left: -100px;
             width: calc(50% - 60px);
+            max-width: 360px;
         }
     }
 }
@@ -65,8 +69,9 @@
                 width: 100%;
                 position: unset;
                 float: unset;
+                max-width: unset;
                 div {
-                    max-width: 480px;
+                    max-width: 360px;
                 }
             }
         }
@@ -78,6 +83,7 @@
         .content {
             flex-direction: column;
             .additionalinfo {
+                padding-left: 0px;
                 .keywords {
                     font-size: 22px;
                 }
@@ -86,6 +92,7 @@
                 }
             }
             h3 {
+                padding-left: 0px;
                 width: calc(100% - 60px);
             }
         }
