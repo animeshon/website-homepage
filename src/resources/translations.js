@@ -21,9 +21,6 @@ export const stringsLang = lang => {
                     headerUnderline: 'All the Anime, Manga, Doujinshi, Light Novels, Visual Novels, Games & more in one single place',
                     headerFormPlaceholder: 'E-mail',
                     headerFormButton: 'Join Now',
-                    headerFormDisclaimer: `Get free trial for a month
-                                           When we start 5.99€ /month
-                                           No credit card required`,
                 },
                 firstSlide: {
                     headline: 'The project the Community needs, the project the Community deserves',
