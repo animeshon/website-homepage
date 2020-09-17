@@ -27,7 +27,7 @@ resource "google_cloud_run_service" "homepage" {
       service_account_name  = local.sa_compute_email
 
       containers {
-        image = format("eu.gcr.io/gcp-animeshon-general/animeshon-com:%s", var.image_tag)
+        image = format("gcr.io/gcp-animeshon-general/animeshon-com:%s", var.image_tag)
 
         env {
           name  = "HOST"
