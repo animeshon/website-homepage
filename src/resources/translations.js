@@ -20,7 +20,7 @@ export const stringsLang = lang => {
                     headerTitle: 'The Anime and Manga Research and Development Company',
                     headerUnderline: 'everything you ever dreamed for your Anime and Manga experience',
                     headerFormPlaceholder: 'E-mail',
-                    headerFormButton: 'Join Now',
+                    headerFormButton: 'Subscribe',
                 },
                 firstSlide: {
                     headline: 'The project the community needs, the project the community deserves',
