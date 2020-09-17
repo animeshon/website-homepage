@@ -1,29 +1,54 @@
 import React from 'react';
-
-import Phones from '../assets/phones.png';
+import Lottie from 'react-lottie';
+import classNames from 'classnames';
 
 import './Slide01.scss';
+import '../styles/global.scss';
 
-const MangaFeature = ({ strings, lang }) => (
-    <div className="manga-feature smartphones-feature">
-        <h2 className={lang === 'ja' ? 'italic' : ''}>{strings.headline}</h2>
-        <div className="content">
-            <div className="texts">
-                {strings.featureOne && <h4>{strings.featureOne}</h4>}
-                {strings.featureTwo && <h4>{strings.featureTwo}</h4>}
-                {strings.featureThree && <h4>{strings.featureThree}</h4>}
-                {strings.featureFour && <h4>{strings.featureFour}</h4>}
-                {strings.featureFive && <h4>{strings.featureFive}</h4>}
-                {strings.featureSix && <h4>{strings.featureSix}</h4>}
-                {strings.featureSeven && <h4>{strings.featureSeven}</h4>}
-                <hr />
-                {strings.priceFeature && <h3>{strings.priceFeature}</h3>}
+function Slide01 ({ strings, lang }) {
+    const SubSlides = strings.subslides.map(function (el) {
+        const keyWords = el.keywords.map(function (keyWord) {
+            return(<h4>{keyWord}</h4>)
+        })
+        return(
+            <div className="subslide">
+                <div className="keywords responsive--texts important-light">
+                    {keyWords}
+                </div>
+                <div className="description responsive--texts light">
+                    {el.description}
+                </div>
             </div>
-            <div className="phones">
-                <img src={Phones} alt={strings.imageOneAltText} />
+        )
+    })
+
+    const lottieOption = {
+        loop: true,
+        autoplay: true,
+        animationData: require('../assets/lotties/lf20_lqsmgn.json'),
+        rendererSettings: {
+          //hideOnTransparent:true,
+          preserveAspectRatio: "YMidxMid meet"
+        }
+    }
+
+    return (
+        <div className="overview-feature smartphones-feature">  
+            <div className="content">
+                <h2 className={classNames("h2--komika", "important-light", {"italic": lang === 'ja'})}>{strings.headline}</h2>
+                <div className="lottie">
+                    <Lottie  
+                        options={lottieOption}
+                        //title={title}
+                        //width={200}
+                    />
+                </div>
+                <div className="subslides">
+                    {SubSlides}
+                </div>
             </div>
         </div>
-    </div>
-);
+    );
+}
 
-export default MangaFeature;
+export default Slide01;

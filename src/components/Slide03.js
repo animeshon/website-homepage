@@ -2,17 +2,17 @@ import React from 'react';
 import classNames from 'classnames';
 import Lottie from 'react-lottie';
 
-import './Slide02.scss';
+import './Slide03.scss';
 import '../styles/global.scss';
 
-function Slide02 ({ strings, lang }) {
+function Slide03 ({ strings, lang }) {
     const AdditionalInformations = strings.additional.map(function (el) {
         return(
-            <div className="additionalinfo ">
-                <span className="responsive--texts important-dark">
+            <div className="additionalinfo">
+                <span className="important-light responsive--texts">
                     {el.title}
                 </span>
-                <span className="responsive--texts dark">
+                <span className="light responsive--texts">
                     {el.description}
                 </span>
             </div>
@@ -22,7 +22,7 @@ function Slide02 ({ strings, lang }) {
     const lottieOption = {
         loop: true,
         autoplay: true,
-        animationData: require('../assets/lotties/lf30_editor_Poez3y.json'),
+        animationData: require('../assets/lotties/lf30_editor_ymNLXC.json'),
         rendererSettings: {
           //hideOnTransparent:true,
           preserveAspectRatio: "YMidxMid meet"
@@ -30,10 +30,16 @@ function Slide02 ({ strings, lang }) {
     }
 
     return (
-    <div className="user-feature smartphones-feature ipad-feature">
+    <div className="dev-feature smartphones-feature ipad-feature">
         <div className="content">
-            <h2 className={classNames("h2--komika", "important-dark", {"italic": lang === 'ja'})}>{strings.headline}</h2>
-            <h3>{strings.subline}</h3>
+            <h2 className={classNames("h2--komika", "important-light", {"italic": lang === 'ja'})}>{strings.headline}</h2>
+            <div className="info">
+                <h3>{strings.subline}</h3>
+                <a name={strings.doc.aria} className="a-button mc-more mc-more--light" href={strings.doc.link} target="_blank">
+                    <span>{strings.doc.span}</span>
+                </a>
+            </div>
+            
             <div className="lottie">
                 <Lottie  
                     options={lottieOption}
@@ -47,4 +53,4 @@ function Slide02 ({ strings, lang }) {
     )
 }
 
-export default Slide02;
+export default Slide03;

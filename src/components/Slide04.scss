@@ -1,0 +1,49 @@
+.contact-feature {
+    background-color: rgb(235, 235, 235);
+    padding: 60px 0;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-direction: column;
+    line-height: 1.5;
+
+    .content {
+        max-width: 1080px;
+        width: calc(100% - 60px);
+        min-height: 10px;
+        align-self: center;
+        flex-direction: row;
+        
+        .contactslist {
+            display: flex;
+            .contacts {
+                position: relative;
+                display: table-cell;
+                max-width: 30%;
+                margin-right: 3.333%;
+                border-top-style: solid;
+                border-top-color: rgb(59, 59, 59);
+                border-top-width: 1px;
+                padding-bottom: 60px;
+                padding-top: 30px;
+            }
+        }
+    }
+}
+
+
+.smartphones-feature {
+    @media screen and (max-width: 920px) {
+        .content {
+            flex-direction: column;
+            .contactslist {
+                flex-direction: column;
+                .contacts {
+                    max-width: 100%;
+                    margin-right: 0%;
+                    padding-left: 0px;
+                }
+            }
+        }
+    }
+}

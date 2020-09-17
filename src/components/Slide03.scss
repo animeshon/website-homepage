@@ -1,5 +1,5 @@
-.user-feature {
-    background-color: rgb(235, 235, 235);
+.dev-feature {
+    background-color: #121212;
     padding: 60px 0;
     display: flex;
     justify-content: center;
@@ -13,27 +13,35 @@
         min-height: 10px;
         align-self: center;
         flex-direction: row;
+        //text-align: right;
+
+        .info {
+            margin-bottom: 60px;
+            position: relative;
+            padding-left: calc(100% - 720px);
+            
+            h3 {
+                padding-bottom: 10px;
+                color: #fff;
+                font-size: 30px;
+                font-weight: 100;
+                font-weight: bold;
+            }
+        }
 
         .additionalinfo {
-            max-width: 720px;
+            //max-width: 720px;
             margin-bottom: 30px;
+            padding-left: calc(100% - 720px);
         }
-        h3 {
-            //font-family: 'komika_displayregular';
-            width: calc(70% - 60px);
-            color: #121212;
-            font-size: 30px;
-            font-weight: 100;
-            //text-transform: uppercase;
-            margin-bottom: 60px;
-            font-weight: bold;
-        }
+        
         .lottie {
-            float: right;
+            float: left;
             position: relative;
             top: -150px;
-            right: -100px;
+            left: -100px;
             width: calc(50% - 60px);
+            max-width: 360px;
         }
     }
 }
@@ -45,8 +53,9 @@
                 width: 100%;
                 position: unset;
                 float: unset;
+                max-width: unset;
                 div {
-                    max-width: 480px;
+                    max-width: 360px;
                 }
             }
         }
@@ -57,7 +66,11 @@
     @media screen and (max-width: 920px) {
         .content {
             flex-direction: column;
-            h3 {
+            .additionalinfo {
+                padding-left: 0px;
+            }
+            .info {
+                padding-left: 0px;
                 width: calc(100% - 60px);
             }
         }

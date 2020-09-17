@@ -1,8 +1,6 @@
 import React from 'react';
 import parse from 'html-react-parser';
-
 import SubscriptionForm from './SubscriptionForm';
-
 import Brand from '../assets/new-animeshon-logo-white.png';
 
 import './Header.scss';
@@ -40,7 +38,6 @@ const Header = ({
             {valueHeaderSuccess === '' ? null : (
                 <p className="success">{parse(valueHeaderSuccess)}</p>
             )}
-            <p>{strings.headerFormDisclaimer}</p>
         </div>
     </header>
 );

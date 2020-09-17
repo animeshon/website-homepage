@@ -1,6 +1,7 @@
 import React from 'react';
 
 import './SubscriptionForm.scss';
+import '../styles/global.scss';
 
 const SubscriptionForm = ({
     source,
@@ -44,8 +45,7 @@ const SubscriptionForm = ({
                         tabIndex="0"
                         value={labels.buttonLabel}
                         name="subscribe"
-                        id="mc-subscribe"
-                        className="button"
+                        className="button mc-subscribe"
                     />
                 </div>
             </form>

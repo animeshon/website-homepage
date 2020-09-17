@@ -22,14 +22,14 @@
             font-size: 16px;
         }
     }
-    #mc-subscribe {
+    .mc-subscribe {
         border: none;
         height: 50px;
         width: 140px;
         font-size: 20px;
         color: #fff;
         text-transform: uppercase;
-        background-color: #e60011;
+        background: linear-gradient(135deg, rgba(238, 127, 153, 1), rgba(239,12,64,1));
         font-weight: lighter;
         letter-spacing: 0.07em;
         border-radius: 0 4px 4px 0;
