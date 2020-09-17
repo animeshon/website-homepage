@@ -21,9 +21,6 @@ export const stringsLang = lang => {
                     headerUnderline: 'everything you ever dreamed for your Anime and Manga experience',
                     headerFormPlaceholder: 'E-mail',
                     headerFormButton: 'Join Now',
-                    headerFormDisclaimer: `Get free trial for a month
-                                           When we start 5.99€ /month
-                                           No credit card required`,
                 },
                 firstSlide: {
                     headline: 'The project the community needs, the project the community deserves',
