@@ -21,8 +21,7 @@ const Header = ({
                 {strings.headerTitle}
             </h1>
             <h2>{strings.headerUnderline}</h2>
-        </div>
-        <SubscriptionForm
+            <SubscriptionForm
                 source="header"
                 value={valueHeader}
                 typeFunction={typeFunction}
@@ -39,6 +38,7 @@ const Header = ({
             {valueHeaderSuccess === '' ? null : (
                 <p className="success">{parse(valueHeaderSuccess)}</p>
             )}
+        </div>
     </header>
 );
 

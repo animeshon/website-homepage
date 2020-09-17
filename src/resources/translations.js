@@ -17,7 +17,7 @@ export const stringsLang = lang => {
         default:
             return {
                 header: {
-                    headerTitle: 'Japanese Multimedia Research and Development',
+                    headerTitle: 'The Anime and Manga Research and Development Company',
                     headerUnderline: 'everything you ever dreamed for your Anime and Manga experience',
                     headerFormPlaceholder: 'E-mail',
                     headerFormButton: 'Join Now',
