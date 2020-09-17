@@ -17,8 +17,8 @@ export const stringsLang = lang => {
         default:
             return {
                 header: {
-                    headerTitle: 'The most complete and accessible Japanese Multimedia Ecosystem',
-                    headerUnderline: 'All the Anime, Manga, Doujinshi, Light Novels, Visual Novels, Games & more in one single place',
+                    headerTitle: 'Japanese Multimedia Research and Development',
+                    headerUnderline: 'everything you ever dreamed for your Anime and Manga experience',
                     headerFormPlaceholder: 'E-mail',
                     headerFormButton: 'Join Now',
                     headerFormDisclaimer: `Get free trial for a month
@@ -26,43 +26,43 @@ export const stringsLang = lang => {
                                            No credit card required`,
                 },
                 firstSlide: {
-                    headline: 'The project the Community needs, the project the Community deserves',
+                    headline: 'The project the community needs, the project the community deserves',
                     subslides: [
                         {
-                            keywords: ["Discover", "Organize", "Rate", "Discuss"],
-                            description: "Intuitive and complete experience. Discover a new world of hidden content"
+                            keywords: ["Discover", "&", "Organize"],
+                            description: "Re-organize your collection and discover a world of content you've never seen"
                         },
                         {
-                            keywords: ["Expand", "Integrate", "Improve"],
-                            description: "Easy to use Interface and SDKs to build you idea on top of Animeshon"
+                            keywords: ["Develop", "&", "Integrate"],
+                            description: "Develop your own idea and expand your horizons through our integrations"
                         },
                     ]
                 },
                 userSlide: {
-                    headline: "Easy to find, easy to consult, easy to consume",
-                    subline: "All the information about Japanese Multimedia Content in one place, easily accessible",
+                    headline: "The easiest way to search for your favorite content",
+                    subline: "Anime, Manga, Doujinshi, Light Novels, Visual Novels, Cosplays and much more...",
                     additional: [
                         {
-                            title: "Universally accessible.",
-                            description: " The informations are available for everyone, everywhere, on everything and in every language."
+                            title: "Everything in a single place. ",
+                            description: "With Animeshon all information about your favorite multimedia content is centralized an easily available."
                         },
                         {
-                            title: "Thightly linked content.",
-                            description: " Find all the related contents of you beloved opera has never been easy task. Thanks to Animeshon it becomes as easy as breathing."
+                            title: "Innovation through research. ",
+                            description: "We are pushing this industry beyond its limits through academic research carried out with universities and research institutions."
                         }
                     ]
                 },
                 devSlide: {
-                    headline: "Unleash the potential of infinte ideas",
-                    subline: "Powerful and easy to use interfaces and SDKs to exploit Animeshon and realize your idea",
+                    headline: "Unleash the potential of your dreams",
+                    subline: "Powerful interfaces and SDKs to easily integrate all our services and products",
                     additional: [
                         {
-                            title: "Complete and comprehensive Documentation.",
-                            description: " Everything we do is for the community, take a look to our documentation and start playing with Animeshon's services."
+                            title: "Always up-to-date documentation. ",
+                            description: "Everything we do is designed for our community, take a look at our documentation and start developing with Animeshon."
                         },
                         {
-                            title: "Foundation Tool-Set in constant evolution.",
-                            description: " The set of tools provided to the dev-community is in constant evolution to provide better, more usable and more performant services."
+                            title: "A universal foundation toolset. ",
+                            description: "The set of tools provided to developers is in constant evolution to provide better, more usable and more performant services."
                         }
                     ],
                     doc: {
@@ -72,11 +72,11 @@ export const stringsLang = lang => {
                     }
                 },
                 contactsSlide: {
-                    headline: "Enter the Isekai Portal",
+                    headline: "Isekai to our world",
                     contacts: [
                         {
-                            title: "Discourse Forum",
-                            description: "Be part of the dev-community andl help Animeshon to provide better service. Together we are invincible.",
+                            title: "Discourse",
+                            description: "Need technical help? Join our developer community!",
                             link: "https://discuss.animeshon.com/",
                             aria: "discourse link",
                             span: "Learn More"
@@ -84,14 +84,14 @@ export const stringsLang = lang => {
                         },
                         {
                             title: "Reddit",
-                            description: "Ask, Discuss and leave feedbacks about Animeshon's mission and ideals. We hear you!",
+                            description: "We want to hear your opinion and feedback!",
                             link: "https://www.reddit.com/r/animeshon/",
                             aria: "Reddit link",
                             span: "Learn More"
                         },
                         {
-                            title: "Official Twitter",
-                            description: "Don't miss any official update about the project.",
+                            title: "Twitter",
+                            description: "Don't miss any official update about Animeshon.",
                             link: "https://twitter.com/AnimeshonSNS",
                             aria: "Twitter link",
                             span: "Learn More"

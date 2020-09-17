@@ -8,20 +8,20 @@
     display: flex;
     width: 100%;
     min-height: 100vh;
-    //background-image: url('../assets/hero-image.jpg');
+    background-image: url('../assets/background-header.png');
 
-    background: 
-        linear-gradient(
-            180deg, 
-            rgba(151, 151, 151, 0.3) 60%,
-            rgba(151, 151, 151, 0.3) 60%,
-            #121212
-        ),
-        linear-gradient(
-            217deg, 
-            rgba(253, 145, 170, 0.7) 32.1%, 
-            rgba(239,12,64,1) 100%
-        );
+    // background: 
+    //     linear-gradient(
+    //         180deg, 
+    //         rgba(151, 151, 151, 0.3) 60%,
+    //         rgba(151, 151, 151, 0.3) 60%,
+    //         #121212
+    //     ),
+    //     linear-gradient(
+    //         217deg, 
+    //         rgba(253, 145, 170, 0.7) 32.1%, 
+    //         rgba(239,12,64,1) 100%
+    //     );
         
     background-size: cover;
     background-position: bottom center;
@@ -47,7 +47,7 @@
         position: relative;
         font-family: 'komika_displayregular';
         color: #fff;
-        font-size: 96px;
+        font-size: 70px;
         font-weight: 100;
         text-transform: uppercase;
         letter-spacing: 0.02em;
