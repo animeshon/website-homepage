@@ -34,3 +34,16 @@ data "terraform_remote_state" "general" {
     }
   }
 }
+
+data "terraform_remote_state" "encyclopedia" {
+  backend = "remote"
+
+  config = {
+    hostname = "app.terraform.io"
+    organization = "animeshon"
+
+    workspaces = {
+      name = "website-encyclopedia-tier-0"
+    }
+  }
+}

@@ -1,5 +1,7 @@
-README.md
-Dockerfile
-.gitignore
 .codefresh.yaml
 .dockerignore
+.gitignore
+/.github
+/terraform
+Dockerfile
+README.md

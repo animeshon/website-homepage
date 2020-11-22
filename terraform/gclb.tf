@@ -1,4 +1,8 @@
-# Setup backends with Cloud CDN enabled.
+locals {
+  run_service_encyclopedia_id = data.terraform_remote_state.encyclopedia.outputs.run_service_id
+}
+
+# Setup the backend service  with Cloud CDN enabled.
 resource "google_compute_backend_service" "homepage" {
   name        = "animeshon-com--homepage"
   enable_cdn  = true
@@ -11,9 +15,13 @@ resource "google_compute_backend_service" "homepage" {
 resource "google_compute_backend_service" "encyclopedia" {
   name        = "animeshon-com--encyclopedia"
   enable_cdn  = true
+
+  backend {
+    group = google_compute_region_network_endpoint_group.encyclopedia.id
+  }
 }
 
-# NEG for serverless Cloud Run instances.
+# NEG for the serverless Cloud Run instance.
 resource "google_compute_region_network_endpoint_group" "homepage" {
   name                  = "homepage-neg"
   network_endpoint_type = "SERVERLESS"
@@ -23,6 +31,17 @@ resource "google_compute_region_network_endpoint_group" "homepage" {
     service = google_cloud_run_service.homepage.name
   }
 }
+
+resource "google_compute_region_network_endpoint_group" "encyclopedia" {
+  name                  = "encyclopedia-neg"
+  network_endpoint_type = "SERVERLESS"
+  region                = google_cloud_run_service.encyclopedia.location
+
+  cloud_run {
+    service = local.run_service_encyclopedia_id
+  }
+}
+
 
 # Setup a proxy for future multiple CDNs in different regions.
 resource "google_compute_target_https_proxy" "animeshon_com_proxy_https" {
