@@ -54,6 +54,6 @@ resource "google_compute_managed_ssl_certificate" "animeshon_com" {
   name     = "animeshon-com"
 
   managed {
-    domains = [google_dns_record_set.animeshon_com.name]
+    domains = [ "animeshon.com." ]
   }
 }
