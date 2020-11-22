@@ -43,5 +43,5 @@ resource "google_compute_global_forwarding_rule" "animeshon_com_fwd_rule_https" 
   ip_address  = google_compute_global_address.animeshon_com.address
   ip_protocol = "TCP"
   port_range  = "443"
-  target      = google_compute_target_https_proxy.images_backend_proxy_https.id
+  target      = google_compute_target_https_proxy.animeshon_com_proxy_https.id
 }
