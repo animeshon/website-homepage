@@ -38,17 +38,6 @@ resource "google_compute_global_address" "animeshon_com" {
 # Setup "animeshon.com" root domain DNS record.
 resource "google_dns_record_set" "animeshon_com" {
   project      = local.zone_project_id
-  name         = "@.${local.zone_dns_name}"
-  managed_zone = local.zone_name
-  type         = "A"
-  ttl          = 300
-
-  rrdatas = [
-    google_compute_global_address.animeshon_com.address,
-  ]
-}
-resource "google_dns_record_set" "animeshon_com" {
-  project      = local.zone_project_id
   name         = ".${local.zone_dns_name}"
   managed_zone = local.zone_name
   type         = "A"
@@ -65,6 +54,6 @@ resource "google_compute_managed_ssl_certificate" "animeshon_com" {
   name     = "animeshon-com"
 
   managed {
-    domains = [ "animeshon.com." ]
+    domains = [ google_dns_record_set.animeshon_com.name ]
   }
 }
