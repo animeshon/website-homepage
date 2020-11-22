@@ -1,5 +1,6 @@
 locals {
-  run_service_encyclopedia_id = data.terraform_remote_state.encyclopedia.outputs.run_service_id
+  run_service_encyclopedia_id       = data.terraform_remote_state.encyclopedia.outputs.run_service_id
+  run_service_encyclopedia_location = data.terraform_remote_state.encyclopedia.outputs.run_service_location
 }
 
 # Setup the backend service  with Cloud CDN enabled.
@@ -35,7 +36,8 @@ resource "google_compute_region_network_endpoint_group" "homepage" {
 resource "google_compute_region_network_endpoint_group" "encyclopedia" {
   name                  = "encyclopedia-neg"
   network_endpoint_type = "SERVERLESS"
-  region                = google_cloud_run_service.encyclopedia.location
+  region                = "europe-west1"
+#   region                = local.run_service_encyclopedia_location
 
   cloud_run {
     service = local.run_service_encyclopedia_id
