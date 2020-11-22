@@ -7,6 +7,7 @@ locals {
 resource "google_compute_backend_service" "homepage" {
   name        = "animeshon-com--homepage"
   enable_cdn  = true
+  protocol    = "HTTPS"
 
   backend {
     group = google_compute_region_network_endpoint_group.homepage.id
@@ -16,6 +17,7 @@ resource "google_compute_backend_service" "homepage" {
 resource "google_compute_backend_service" "encyclopedia" {
   name        = "animeshon-com--encyclopedia"
   enable_cdn  = true
+  protocol    = "HTTPS"
 
   backend {
     group = google_compute_region_network_endpoint_group.encyclopedia.id
