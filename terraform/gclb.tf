@@ -46,18 +46,9 @@ resource "google_compute_region_network_endpoint_group" "encyclopedia" {
   }
 }
 
-
-# Setup a proxy for future multiple CDNs in different regions.
-resource "google_compute_target_https_proxy" "animeshon_com_proxy_https" {
-  name    = "animeshon-com--https"
-  url_map = google_compute_url_map.animeshon_com_backends_https.id
-
-  ssl_certificates = [google_compute_managed_ssl_certificate.animeshon_com.id]
-}
-
 # Setup mapping for images backends.
-resource "google_compute_url_map" "animeshon_com_backends_https" {
-  name            = "animeshon-com-https"
+resource "google_compute_url_map" "animeshon_com_https" {
+  name            = "animeshon-com--https"
   default_service = google_compute_backend_service.homepage.id
 
   host_rule {
@@ -68,6 +59,12 @@ resource "google_compute_url_map" "animeshon_com_backends_https" {
   path_matcher {
     name            = "default"
     default_service = google_compute_backend_service.homepage.id
+
+    route_rules {
+      url_redirect {
+        https_redirect = true
+      }
+    }
 
     path_rule {
       paths = ["/e/*", "/e"] # Encyclopedia URI - redirect all traffic to its Cloud Run instance.
@@ -82,11 +79,40 @@ resource "google_compute_url_map" "animeshon_com_backends_https" {
   }
 }
 
+resource "google_compute_url_map" "animeshon_com_http" {
+  name            = "animeshon-com-http"
+  default_service = google_compute_backend_service.homepage.id
+
+  default_url_redirect {
+    https_redirect = true
+  }
+}
+
+# Setup a proxy for future multiple proxies in different regions.
+resource "google_compute_target_https_proxy" "animeshon_com_https" {
+  name    = "animeshon-com--https"
+  url_map = google_compute_url_map.animeshon_com_https.id
+
+  ssl_certificates = [google_compute_managed_ssl_certificate.animeshon_com.id]
+}
+resource "google_compute_target_http_proxy" "animeshon_com_http" {
+  name    = "animeshon-com--http"
+  url_map = google_compute_url_map.animeshon_com_http.id
+}
+
 # Setup forwarding rules to HTTP and HTTPS backend ports.
 resource "google_compute_global_forwarding_rule" "animeshon_com_fwd_rule_https" {
   name        = "animeshon-com--fwd-rule--https"
   ip_address  = google_compute_global_address.animeshon_com.address
   ip_protocol = "TCP"
   port_range  = "443"
-  target      = google_compute_target_https_proxy.animeshon_com_proxy_https.id
+  target      = google_compute_target_https_proxy.animeshon_com_https.id
+}
+
+resource "google_compute_global_forwarding_rule" "animeshon_com_fwd_rule_http" {
+  name        = "animeshon-com--fwd-rule--http"
+  ip_address  = google_compute_global_address.animeshon_com.address
+  ip_protocol = "TCP"
+  port_range  = "80"
+  target      = google_compute_target_http_proxy.animeshon_com_http.id
 }
