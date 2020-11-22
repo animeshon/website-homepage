@@ -11,7 +11,7 @@ resource "random_id" "homepage" {
 resource "google_cloud_run_service" "homepage" {
   project  = local.project_id
   location = "europe-west1"
-  name     = "homepage-animeshon-com"
+  name     = "animeshon-com"
 
   template {
     metadata {
@@ -19,7 +19,7 @@ resource "google_cloud_run_service" "homepage" {
         "autoscaling.knative.dev/maxScale" = "5"
         "run.googleapis.com/client-name"   = "cloud-console"
       }
-      name = format("homepage-animeshon-com-%s", random_id.homepage.hex) 
+      name = format("animeshon-com-%s", random_id.homepage.hex) 
     }
 
     spec {
