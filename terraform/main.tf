@@ -1,5 +1,5 @@
 provider "google" {
-  version = "~> 3.20"
+  version = "~> 3.48"
 }
 
 locals {
