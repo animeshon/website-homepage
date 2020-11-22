@@ -71,6 +71,12 @@ resource "google_compute_url_map" "animeshon_com_backends_https" {
 
     path_rule {
       paths = ["/e/*"] # Encyclopedia URI - redirect all traffic to its Cloud Run instance.
+      route_action {
+        url_rewrite {
+          path_prefix_rewrite = "/"
+        }
+      }
+
       service = google_compute_backend_service.encyclopedia.id
     }
   }
