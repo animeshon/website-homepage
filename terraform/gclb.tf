@@ -1,5 +1,5 @@
 locals {
-  run_service_encyclopedia_id       = data.terraform_remote_state.encyclopedia.outputs.run_service_id
+  run_service_encyclopedia_name     = data.terraform_remote_state.encyclopedia.outputs.run_service_name
   run_service_encyclopedia_location = data.terraform_remote_state.encyclopedia.outputs.run_service_location
 }
 
@@ -40,7 +40,7 @@ resource "google_compute_region_network_endpoint_group" "encyclopedia" {
 #   region                = local.run_service_encyclopedia_location
 
   cloud_run {
-    service = local.run_service_encyclopedia_id
+    service = local.run_service_encyclopedia_name
   }
 }
 
