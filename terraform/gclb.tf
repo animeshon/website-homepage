@@ -50,7 +50,7 @@ resource "google_compute_target_https_proxy" "animeshon_com_proxy_https" {
   name    = "animeshon-com--https"
   url_map = google_compute_url_map.animeshon_com_backends_https.id
 
-  # ssl_certificates = [google_compute_managed_ssl_certificate.animeshon_com.id]
+  ssl_certificates = [google_compute_managed_ssl_certificate.animeshon_com.id]
 }
 
 # Setup mapping for images backends.

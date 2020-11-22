@@ -38,7 +38,7 @@ resource "google_compute_global_address" "animeshon_com" {
 # Setup "animeshon.com" root domain DNS record.
 resource "google_dns_record_set" "animeshon_com" {
   project      = local.zone_project_id
-  name         = ".${local.zone_dns_name}"
+  name         = local.zone_dns_name
   managed_zone = local.zone_name
   type         = "A"
   ttl          = 300
