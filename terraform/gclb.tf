@@ -2,10 +2,26 @@
 resource "google_compute_backend_service" "homepage" {
   name        = "animeshon-com--homepage"
   enable_cdn  = true
+
+  backend {
+    group = google_compute_region_network_endpoint_group.homepage.id
+  }
 }
+
 resource "google_compute_backend_service" "encyclopedia" {
   name        = "animeshon-com--encyclopedia"
   enable_cdn  = true
+}
+
+# NEG for serverless Cloud Run instances.
+resource "google_compute_region_network_endpoint_group" "homepage" {
+  name                  = "homepage-neg"
+  network_endpoint_type = "SERVERLESS"
+  region                = "europe-west1"
+
+  cloud_run {
+    service = google_cloud_run_service.homepage.name
+  }
 }
 
 # Setup a proxy for future multiple CDNs in different regions.

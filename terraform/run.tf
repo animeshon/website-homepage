@@ -50,20 +50,20 @@ resource "google_cloud_run_service" "homepage" {
   }
 }
 
-# Configure the domain name mapping for the instance to animeshon.com.
-resource "google_cloud_run_domain_mapping" "homepage" {
-  project  = google_cloud_run_service.homepage.project
-  location = google_cloud_run_service.homepage.location
-  name     = "animeshon.com"
+# # Configure the domain name mapping for the instance to animeshon.com.
+# resource "google_cloud_run_domain_mapping" "homepage" {
+#   project  = google_cloud_run_service.homepage.project
+#   location = google_cloud_run_service.homepage.location
+#   name     = "animeshon.com"
 
-  metadata {
-    namespace = local.project_id
-  }
+#   metadata {
+#     namespace = local.project_id
+#   }
 
-  spec {
-    route_name = google_cloud_run_service.homepage.name
-  }
-}
+#   spec {
+#     route_name = google_cloud_run_service.homepage.name
+#   }
+# }
 
 # Allow everyone to access this instance from animeshon.com.
 data "google_iam_policy" "noauth" {
