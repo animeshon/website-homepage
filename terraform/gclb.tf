@@ -62,11 +62,13 @@ resource "google_compute_url_map" "animeshon_com_https" {
 
     path_rule {
       paths = ["/e/*", "/e"] # Encyclopedia URI - redirect all traffic to its Cloud Run instance.
-      route_action {
-        url_rewrite {
-          path_prefix_rewrite = "/"
-        }
-      }
+
+      # ! NOTE: Path rewrite has been temporarily disabled due to https://github.com/vercel/next.js/discussions/16958.
+      # route_action {
+      #   url_rewrite {
+      #     path_prefix_rewrite = "/"
+      #   }
+      # }
 
       service = google_compute_backend_service.encyclopedia.id
     }
