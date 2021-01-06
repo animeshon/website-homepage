@@ -1,15 +1,15 @@
-name: Homepage [Tier 0]
+name: Homepage [Tier 2]
 
 env:
-  PROJECT_ID:       ${{ secrets.TIER_0_GENERAL_PROJECT }}
-  GCR_CREDENTIALS:  ${{ secrets.TIER_0_GENERAL_REGISTRY_CREDENTIALS }}
+  PROJECT_ID:       ${{ secrets.TIER_2_GENERAL_PROJECT }}
+  GCR_CREDENTIALS:  ${{ secrets.TIER_2_GENERAL_REGISTRY_CREDENTIALS }}
   
-  TF_WORKSPACE:     ${{ secrets.TIER_0_TERRAFORM_WORKSPACE }}
-  TF_CREDENTIALS:   ${{ secrets.TIER_0_TERRAFORM_CREDENTIALS }}
+  TF_WORKSPACE:     ${{ secrets.TIER_2_TERRAFORM_WORKSPACE }}
+  TF_CREDENTIALS:   ${{ secrets.TIER_2_TERRAFORM_CREDENTIALS }}
 
 on:
   push:
-    branches: [ master ]
+    branches-ignore: [ master ]
 
 jobs:
   build:

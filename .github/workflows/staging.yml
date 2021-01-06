@@ -1,14 +1,14 @@
-name: Homepage [Tier 0]
+name: Homepage [Tier 1]
 
 env:
-  PROJECT_ID:       ${{ secrets.TIER_0_GENERAL_PROJECT }}
-  GCR_CREDENTIALS:  ${{ secrets.TIER_0_GENERAL_REGISTRY_CREDENTIALS }}
+  PROJECT_ID:       ${{ secrets.TIER_1_GENERAL_PROJECT }}
+  GCR_CREDENTIALS:  ${{ secrets.TIER_1_GENERAL_REGISTRY_CREDENTIALS }}
   
-  TF_WORKSPACE:     ${{ secrets.TIER_0_TERRAFORM_WORKSPACE }}
-  TF_CREDENTIALS:   ${{ secrets.TIER_0_TERRAFORM_CREDENTIALS }}
+  TF_WORKSPACE:     ${{ secrets.TIER_1_TERRAFORM_WORKSPACE }}
+  TF_CREDENTIALS:   ${{ secrets.TIER_1_TERRAFORM_CREDENTIALS }}
 
 on:
-  push:
+  pull_request:
     branches: [ master ]
 
 jobs:
