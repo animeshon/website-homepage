@@ -1,3 +1,8 @@
+locals {
+  project         = data.terraform_remote_state.general.outputs.project_id
+  service_account = data.terraform_remote_state.general.outputs.google_compute_default_service_account_email
+}
+
 
 # NOTE: A new id is generated each time we switch to a new image tag.
 resource "random_id" "homepage" {
@@ -9,7 +14,7 @@ resource "random_id" "homepage" {
 }
 
 resource "google_cloud_run_service" "homepage" {
-  project  = local.project_id
+  project  = local.project
   location = "europe-west1"
   name     = "animeshon-com"
 
@@ -24,7 +29,7 @@ resource "google_cloud_run_service" "homepage" {
 
     spec {
       container_concurrency = 80
-      service_account_name  = local.sa_compute_email
+      service_account_name  = local.service_account
 
       containers {
         image = format("gcr.io/gcp-animeshon-general/animeshon-com:%s", var.image_tag)
@@ -57,7 +62,7 @@ resource "google_cloud_run_service" "homepage" {
 #   name     = "animeshon.com"
 
 #   metadata {
-#     namespace = local.project_id
+#     namespace = local.project
 #   }
 
 #   spec {

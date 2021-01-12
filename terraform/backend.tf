@@ -7,6 +7,17 @@ terraform {
       prefix = "homepage-"
     }
   }
+
+  required_providers {
+    google = {
+      source = "hashicorp/google"
+    }
+    random = {
+      source = "hashicorp/random"
+    }
+  }
+  
+  required_version = ">= 0.13"
 }
 
 data "terraform_remote_state" "root" {

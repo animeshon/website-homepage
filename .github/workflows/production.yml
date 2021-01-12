@@ -1,13 +1,20 @@
-name: Production CI
+name: Homepage [Tier 0]
 
 env:
-  PROJECT_ID: ${{ secrets.PROJECT_ID_TIER_0 }}
-  GCR_CREDENTIALS: ${{ secrets.GCR_GENERAL_TIER_0_CREDENTIALS }}
-  TF_WORKSPACE: tier-0
+  PROJECT_ID:       ${{ secrets.TIER_0_GENERAL_PROJECT }}
+  GCR_CREDENTIALS:  ${{ secrets.TIER_0_GENERAL_REGISTRY_CREDENTIALS }}
+  
+  TF_WORKSPACE:     ${{ secrets.TIER_0_TERRAFORM_WORKSPACE }}
+  TF_CREDENTIALS:   ${{ secrets.TIER_0_TERRAFORM_CREDENTIALS }}
 
 on:
   push:
     branches: [ master ]
+  workflow_dispatch:
+    inputs:
+      sha:
+        description: 'SHA of the commit that triggered this workflow'     
+        required: true
 
 jobs:
   build:
@@ -16,6 +23,9 @@ jobs:
     steps:
     - name: Clone the repository code
       uses: actions/checkout@v2
+      with:
+        repository: animeshon/template-homepage
+        token: ${{ secrets.WORKFLOW_GITHUB_TOKEN }}
 
     - name: Build and push Docker images to Google Cloud Registry
       uses: docker/build-push-action@v1
@@ -24,7 +34,8 @@ jobs:
         password: ${{ env.GCR_CREDENTIALS }}
         registry: gcr.io
         repository: ${{ env.PROJECT_ID }}/animeshon-com
-        tags: latest,${{ github.sha }}
+        tags: latest,${{ github.event.inputs.sha || github.sha }}
+        dockerfile: Dockerfile.users
         tag_with_ref: true
         tag_with_sha: true
 
@@ -39,7 +50,7 @@ jobs:
     - name: Setup the Terraform CLI
       uses: hashicorp/setup-terraform@v1
       with:
-        cli_config_credentials_token: ${{ secrets.TF_CREDENTIALS }}
+        cli_config_credentials_token: ${{ env.TF_CREDENTIALS }}
 
     - name: Initialize the Terraform working directory
       working-directory: ./terraform
@@ -51,7 +62,7 @@ jobs:
       id: vars
       run: |-
         cat > pipeline.auto.tfvars <<EOF
-        image_tag = "${{ github.sha }}"
+        image_tag = "${{ github.event.inputs.sha || github.sha }}"
         EOF
 
     - name: Apply the Terraform execution plan
