@@ -1,62 +1,62 @@
-name: Homepage [Tier 1]
+# name: Homepage [Tier 1]
 
-env:
-  PROJECT_ID:       ${{ secrets.TIER_1_GENERAL_PROJECT }}
-  GCR_CREDENTIALS:  ${{ secrets.TIER_1_GENERAL_REGISTRY_CREDENTIALS }}
+# env:
+#   PROJECT_ID:       ${{ secrets.TIER_1_GENERAL_PROJECT }}
+#   GCR_CREDENTIALS:  ${{ secrets.TIER_1_GENERAL_REGISTRY_CREDENTIALS }}
   
-  TF_WORKSPACE:     ${{ secrets.TIER_1_TERRAFORM_WORKSPACE }}
-  TF_CREDENTIALS:   ${{ secrets.TIER_1_TERRAFORM_CREDENTIALS }}
+#   TF_WORKSPACE:     ${{ secrets.TIER_1_TERRAFORM_WORKSPACE }}
+#   TF_CREDENTIALS:   ${{ secrets.TIER_1_TERRAFORM_CREDENTIALS }}
 
-on:
-  pull_request:
-    branches: [ master ]
+# on:
+#   pull_request:
+#     branches: [ master ]
 
-jobs:
-  build:
-    runs-on: ubuntu-latest
+# jobs:
+#   build:
+#     runs-on: ubuntu-latest
 
-    steps:
-    - name: Clone the repository code
-      uses: actions/checkout@v2
+#     steps:
+#     - name: Clone the repository code
+#       uses: actions/checkout@v2
 
-    - name: Build and push Docker images to Google Cloud Registry
-      uses: docker/build-push-action@v1
-      with:
-        username: _json_key
-        password: ${{ env.GCR_CREDENTIALS }}
-        registry: gcr.io
-        repository: ${{ env.PROJECT_ID }}/animeshon-com
-        tags: latest,${{ github.sha }}
-        tag_with_ref: true
-        tag_with_sha: true
+#     - name: Build and push Docker images to Google Cloud Registry
+#       uses: docker/build-push-action@v1
+#       with:
+#         username: _json_key
+#         password: ${{ env.GCR_CREDENTIALS }}
+#         registry: gcr.io
+#         repository: ${{ env.PROJECT_ID }}/animeshon-com
+#         tags: latest,${{ github.sha }}
+#         tag_with_ref: true
+#         tag_with_sha: true
 
-  provision:
-    needs: [ build ]
-    runs-on: ubuntu-latest
+#   provision:
+#     needs: [ build ]
+#     runs-on: ubuntu-latest
 
-    steps:
-    - name: Clone the repository code
-      uses: actions/checkout@v2
+#     steps:
+#     - name: Clone the repository code
+#       uses: actions/checkout@v2
 
-    - name: Setup the Terraform CLI
-      uses: hashicorp/setup-terraform@v1
-      with:
-        cli_config_credentials_token: ${{ env.TF_CREDENTIALS }}
+#     - name: Setup the Terraform CLI
+#       uses: hashicorp/setup-terraform@v1
+#       with:
+#         cli_config_credentials_token: ${{ env.TF_CREDENTIALS }}
 
-    - name: Initialize the Terraform working directory
-      working-directory: ./terraform
-      id: init
-      run: terraform init
+#     - name: Initialize the Terraform working directory
+#       working-directory: ./terraform
+#       id: init
+#       run: terraform init
 
-    - name: Setup Terraform variables
-      working-directory: ./terraform
-      id: vars
-      run: |-
-        cat > pipeline.auto.tfvars <<EOF
-        image_tag = "${{ github.sha }}"
-        EOF
+#     - name: Setup Terraform variables
+#       working-directory: ./terraform
+#       id: vars
+#       run: |-
+#         cat > pipeline.auto.tfvars <<EOF
+#         image_tag = "${{ github.sha }}"
+#         EOF
 
-    - name: Apply the Terraform execution plan
-      working-directory: ./terraform
-      id: plan
-      run: terraform apply -auto-approve -no-color
+#     - name: Apply the Terraform execution plan
+#       working-directory: ./terraform
+#       id: plan
+#       run: terraform apply -auto-approve -no-color
